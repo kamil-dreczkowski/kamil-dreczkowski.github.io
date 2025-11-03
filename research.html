@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+    <title>Kamil Dreczkowski - PAGE NAME</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+   </head>
+
+<style>
+    #header nav ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    #header nav ul li {
+        margin-bottom: 0.8em;
+    }
+
+    #header nav ul li a {
+        display: block;
+        text-align: left;
+    }
+
+    #header nav ul li a i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+    }
+</style>
+<style>
+    #header .inner .image.avatar {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+</style>
+<style>
+    /* Footer Icon Styling from previous steps */
+    #footer .inner ul.icons li {
+        padding: 0 0.3em;
+        margin: 0;
+    }
+
+    #footer .inner ul.icons li a {
+        width: 2.0em;
+        height: 2.0em;
+        font-size: 0.9em;
+        line-height: 2.0em;
+    }
+
+    #footer .inner ul.copyright {
+        padding-top: 0.5em;
+        font-size: 0.8em;
+    }
+</style>
+   <style>
+/* ... your existing styles ... */
+
+/* REVISED FIX for Main Content Alignment (Moving it LEFT) */
+@media screen and (min-width: 981px) {
+    /* Aligns the main content past the fixed sidebar width */
+    #main {
+        /* Keep the necessary margin to clear the sidebar (20em is the width of the sidebar) */
+        margin-left: 25em;
+
+        /* Reduce the maximum width of the content area.
+           This pulls the right edge of the content inward, making the main column appear left-justified
+           and closer to the sidebar. Adjust 50em to your preference. */
+        max-width: 50em;
+
+        /* The width should still take up the remaining space but respect the max-width */
+        width: calc(100% - 25em);
+    }
+}
+</style>
+<style>
+/* ... your existing header/footer/alignment styles ... */
+
+/* AGGRESSIVE FIX: Zeroing out all major vertical spaces */
+
+/* 1. Eliminate all top/bottom padding on the section container itself */
+#main section {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 2. Target the heading (h2) and reduce space above/below it */
+#main section h2 {
+    margin: 0 0 0.5em 0 !important; /* Top margin is zeroed out, small space below */
+    padding: 0 !important;
+}
+
+/* 3. Target the row of articles and eliminate its bottom margin */
+#main section .row {
+    margin-bottom: 0 !important;
+}
+</style>
+<style>
+/* ... your existing styles ... */
+
+/* FINAL FIX: Larger Image Size and Float Left */
+#main .work-item .image.fit.thumb {
+    /* Float image to the left */
+    float: left !important;
+
+    /* INCREASED PERCENTAGE FOR LARGER IMAGE SIZE */
+    width: 50% !important;
+
+    /* Add space to the right of the image */
+    margin: 0 1.5em 1em 0 !important;
+
+    /* Ensure no maximum width is constraining the image */
+    max-width: none !important;
+    padding: 0 !important;
+}
+
+/* Clear the float so the next article starts below */
+#main .work-item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+   <body class="is-preload">
+
+      <header id="header">
+            <div class="inner">
+               <a href="#" class="image avatar"><img src="images/Profilowe2.jpg" alt="" /></a>
+         <h1><strong>Kamil Dreczkowski</strong></h1>
+            <br>
+            <nav>
+             <ul>
+                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                 <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                 <li><a href="research.html"><i class="fas fa-book"></i> Research</a></li>
+                 <li><a href="hobbies.html"><i class="fas fa-gamepad"></i> Hobbies</a></li>
+           </ul>
+            </nav>
+            </div>
+         </header>
+<div id="main">
+
+    <section id="robot-learning">
+        <h2>Robot Learning</h2>
+        <div class="row">
+
+            <article class="col-12 work-item">
+                <a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
+                <h3>Learning a Thousand Tasks in a Day</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+
+            <article class="col-12 work-item">
+                <a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+                <h3>Framework and Benchmarks for Combinatorial and Mixed-variable Bayesian Optimization</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+
+            <article class="col-12 work-item">
+                <a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+                <h3>One-Shot Imitation Learning: A Pose Estimation Perspective</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="computer-vision">
+        <h2>Computer Vision for Robotics</h2>
+        <div class="row">
+
+            <article class="col-12 work-item">
+                <a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
+                <h3>Learning Eye-in-Hand Calibration from a Single Image</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+
+            <article class="col-12 work-item">
+                <a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
+                <h3>Toward real-world automated antibody design with combinatorial Bayesian optimization</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="combinatorial-bo">
+        <h2>Combinatorial Bayesian Optimisation</h2>
+        <div class="row">
+
+            <article class="col-12 work-item">
+                <a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
+                <h3>Hybrid ICP (First)</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+
+            <article class="col-12 work-item">
+                <a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
+                <h3>Hybrid ICP (Second)</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+        </div>
+    </section>
+
+</div>
+
+<footer id="footer">
+   <div class="inner">
+      <ul class="icons">
+         <li><a href="https://scholar.google.com/citations?user=5hrKfnwAAAAJ&hl=en" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
+         <li><a href="mailto:kamil-dreczkowski@outlook.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+         <li><a href="https://github.com/kamil-dreczkowski" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+         <li><a href="https://linkedin.com/in/kamil-dreczkowski/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+         <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
+      </ul>
+      <ul class="copyright">
+         <li>&copy; Kamil Dreczkowski</li><li>Last updated November 2025</a></li>
+      </ul>
+   </div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+   </body>
+</html>

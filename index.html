@@ -1,463 +1,310 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Strata by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+   <head>
+    <title>Kamil Dreczkowski | Researcher & Engineer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+   </head>
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1><strong>I am Strata</strong>, a super simple<br />
-					responsive site template freebie<br />
-					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-				</div>
-			</header>
+<style>
+/* ------------------------------------------------------------------- */
+/* 1. LAYOUT AND SCROLL TRANSITION FIX (CRITICAL) */
+/* ------------------------------------------------------------------- */
 
-		<!-- Main -->
-			<div id="main">
+/* NEW: Fixed Background Element (Placed outside the main content flow) */
+#fixed-hero-background {
+    position: fixed;
+    top: 0;
+    /* Needs to start exactly where the sidebar ends (Strata default is 20em) */
+    left: 18.8em;
+    width: calc(100% - 20em); /* Fill the rest of the viewport */
+    height: 100vh;
+    /* Z-index 0: This is the lowest element, serving as the fixed background */
+    z-index: 0;
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>Ipsum lorem dolor aliquam ante commodo<br />
-							magna sed accumsan arcu neque.</h2>
-						</header>
-						<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
-					</section>
-
-				<!-- Two -->
-					<section id="two">
-						<h2>Recent Work</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Magna sed consequat tempus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
-					</section>
-
-				<!-- Three -->
-					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										1234 Somewhere Rd.<br />
-										Nashville, TN 00000<br />
-										United States
-									</li>
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										000-000-0000
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">hello@untitled.tld</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
-
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
+    /* Image styles */
+    background-image: url('images/Robot1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
+/* Placeholder section to push content down one viewport height */
+#content-placeholder {
+    height: 100vh;
+    /* This section is intentionally empty to reserve space for the fixed image */
+}
 
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+/* Ensure #main is set up for the scrollable content */
+@media screen and (min-width: 981px) {
+    #main {
+        margin-left: 20em;
+        width: calc(100% - 20em);
+        padding-top: 0 !important;
+        /* CRITICAL FIX: Force the background of the main content wrapper (Tier 2 of defense) */
+        background-color: #222222 !important;
+    }
+}
 
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
+/* ------------------------------------------------------------------- */
+/* 2. GLASS BOX AND TEXT STYLES (FINALIZED: Black/Blue Text, No Margin) */
+/* ------------------------------------------------------------------- */
 
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
+.hero-content {
+    position: relative;
+    /* Z-index 10: Ensures the glass box sits above the fixed background (0) */
+    z-index: 10;
 
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
+    /* Padding to control the size of the glass box around the text */
+    /* REDUCED horizontal padding to 5em (from 29em) to allow the text to spread out */
+    padding: 9em 5em;
 
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
+    /* Base text color for all elements is BLACK */
+    color: #000000 !important;
+    text-align: left !important;
 
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
+    /* GLASS MORPHISM EFFECT */
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    text-shadow: none;
+    margin-bottom: 2em; /* Spacing below the box before the next section */
+}
 
-					</section>
-				-->
+/* AGGRESSIVE FIX: Target ALL children inside the box to force black color */
+.hero-content * {
+    color: #000000 !important;
+}
 
-			</div>
+/* Welcome Line (h1) Styling - Black */
+.hero-content .welcome-line {
+    font-size: 3em !important;
+    font-weight: Bold !important;
+    line-height: 1.1em;
+    color: #000000 !important;
+    margin-bottom: 0 !important; /* Eliminates space below H1 */
+}
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+/* Summary Line (p) Styling - Black */
+.hero-content .summary-line {
+    font-size: 2em !important;
+    font-weight: 800;
+    line-height: 1.4em;
+    color: #000000 !important;
+    margin-top: 0 !important; /* Eliminates space above P */
+}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+/* FINAL FIX: Interactive Word - Dark Blue (Overrides the black color only for the span) */
+#interactive-word {
+    color: #1A237E !important; /* Deep Indigo Blue */
+    font-weight: 900 !important;
+}
 
-	</body>
+/* Responsive adjustment for padding on small screens */
+@media screen and (max-width: 736px) {
+    /* Adjust fixed background for mobile sidebar disappearance */
+    #fixed-hero-background {
+        left: 0;
+        width: 100%;
+    }
+
+    .hero-content {
+        padding: 2em 3em;
+    }
+    .hero-content .welcome-line {
+        font-size: 3em !important;
+    }
+    .hero-content .summary-line {
+        font-size: 1.5em !important;
+    }
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. MENU AND FOOTER STYLES (Retained from your original code) */
+/* ------------------------------------------------------------------- */
+#header nav ul { list-style: none; padding-left: 0; margin: 0; text-align: left; }
+#header nav ul li { margin-bottom: 0.8em; }
+#header nav ul li a { display: block; text-align: left; }
+#header nav ul li a i { margin-right: 10px; width: 20px; text-align: center; }
+#header .inner .image.avatar { display: block; margin-left: auto; margin-right: auto; text-align: center; }
+#footer .inner ul.icons li { padding: 0 0.3em; margin: 0; }
+#footer .inner ul.icons li a { width: 2.0em; height: 2.0em; font-size: 0.9em; line-height: 2.0em; }
+#footer .inner ul.copyright { padding-top: 0.5em; font-size: 0.8em; }
+
+
+/* ------------------------------------------------------------------- */
+/* 4. SOLID WHITE BACKGROUND START & FOOTER/HEADER COLOR FIXES */
+/* ------------------------------------------------------------------- */
+
+/* CRITICAL: Set the sections after the hero to solid white and remove unnecessary spacing */
+#one, #two, #three {
+    background-color: #ffffff !important;
+    position: relative;
+    /* Z-index 5: Ensures these sections sit above the fixed background (0) */
+    z-index: 5;
+    /* Fix: Ensure the last section doesn't push a white margin/padding into the footer space */
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* CRITICAL FIX: Set the body background itself to dark grey (Tier 1 of defense) */
+body {
+    background-color: #222222 !important;
+    background-image: none !important;
+    background-attachment: scroll !important;
+}
+
+/* NEW FIX: Aggressively enforce dark background on the fixed sidebar (header) for color matching */
+header#header {
+    background: #222222 !important;
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+
+/* FOOTER RESTORATION FIX - Super Aggressive Targeting (Tier 3 of defense) */
+footer#footer {
+    /* Critical: Force the background color using multiple properties */
+    background: #222222 !important;
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 5;
+    /* Ensure no margins push the footer away from content */
+    margin-top: 0 !important;
+}
+
+/* Target the inner container of the footer, which might also have an inherited background */
+footer#footer .inner {
+    background: #222222 !important;
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+/* Ensure links and icons inside the footer are also white/light to be visible */
+#footer a {
+    color: #ffffff !important;
+}
+</style>
+
+   <body class="is-preload">
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const interactiveWordElement = document.getElementById('interactive-word');
+        // Define the words and the delay (in milliseconds)
+        const words = ['Researcher', 'Engineer'];
+        const typingSpeed = 100; // Delay between typing letters
+        const deletingSpeed = 50;  // Delay between deleting letters
+        const delayBeforeNextWord = 1500; // Pause after word is fully typed
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriterEffect() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                // DELETE phase
+                interactiveWordElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // TYPE phase
+                interactiveWordElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                // Word is fully typed, start deleting after a delay
+                isDeleting = true;
+                setTimeout(typeWriterEffect, delayBeforeNextWord);
+            } else if (isDeleting && charIndex === 0) {
+                // Word is fully deleted, move to the next word
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length; // Cycle to the next word
+                setTimeout(typeWriterEffect, 500); // Small pause before typing next word
+            } else {
+                // Continue typing or deleting
+                const speed = isDeleting ? deletingSpeed : typingSpeed;
+                setTimeout(typeWriterEffect, speed);
+            }
+        }
+
+        // Start the effect when the page loads
+        typeWriterEffect();
+    });
+</script>
+
+      <!-- Header (Sidebar) -->
+         <header id="header">
+            <div class="inner">
+               <a href="#" class="image avatar"><img src="images/Profilowe2.jpg" alt="" /></a>
+         <h1><strong>Kamil Dreczkowski</strong></h1>
+            <br>
+            <nav>
+             <ul>
+                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                 <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                 <li><a href="research.html"><i class="fas fa-book"></i> Research</a></li>
+                 <li><a href="hobbies.html"><i class="fas fa-gamepad"></i> Hobbies</a></li>
+           </ul>
+            </nav>
+            </div>
+         </header>
+
+        <!-- NEW: Fixed Background Image -->
+        <div id="fixed-hero-background"></div>
+
+      <!-- Main Content (Scrollable) -->
+        <div id="main">
+            <!-- 1. Full-Height Placeholder (Creates the initial fold) -->
+            <section id="content-placeholder"></section>
+
+            <!-- 2. Glass Box Content (Appears just after the fold and scrolls up) -->
+            <section id="hero-overlay-content">
+                <div class="hero-content">
+                    <h1 class="welcome-line">Welcome!</h1>
+                    <br>
+                    <p class="summary-line">
+                        I am a <span id="interactive-word">Researcher</span> focused on pioneering next-generation Robot Learning systems. This site showcases my expertise in Computer Vision, autonomous control, and advanced Bayesian Optimization techniques for real-world robotic applications.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. About Me Section (Follows the glass box, with new content) -->
+            <section id="one">
+                <header class="major">
+                    <h2>About Me<br /></h2>
+
+
+
+<!-- Footer -->
+<footer id="footer">
+   <div class="inner">
+      <ul class="icons">
+         <li><a href="https://scholar.google.com/citations?user=5hrKfnwAAAAJ&hl=en" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
+         <li><a href="mailto:kamil-dreczkowski@outlook.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+         <li><a href="https://github.com/kamil-dreczkowski" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+         <li><a href="https://linkedin.com/in/kamil-dreczkowski/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+         <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
+      </ul>
+      <ul class="copyright">
+         <li>&copy; Kamil Dreczkowski</li><li>Last updated November 2025</a></li>
+      </ul>
+   </div>
+</footer>
+
+      <!-- Scripts -->
+         <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/jquery.poptrox.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
+
+   </body>
 </html>
