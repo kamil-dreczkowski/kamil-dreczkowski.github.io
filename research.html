@@ -1,66 +1,87 @@
 <!DOCTYPE HTML>
 <html>
-   <head>
-    <title>Kamil Dreczkowski - PAGE NAME</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-   </head>
+    <head>
+     <title>Kamil Dreczkowski - PAGE NAME</title>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
 
 <style>
-    #header nav ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-        text-align: left;
-    }
+/* --- 1. COLOR CONSISTENCY FIX: Dark Sidebar/Footer (#191919) --- */
 
-    #header nav ul li {
-        margin-bottom: 0.8em;
-    }
+/* Force the Sidebar (Header) to the desired dark shade */
+header#header {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
 
-    #header nav ul li a {
-        display: block;
-        text-align: left;
-    }
+/* Force the Footer to the desired dark shade */
+footer#footer {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
 
-    #header nav ul li a i {
-        margin-right: 10px;
-        width: 20px;
-        text-align: center;
-    }
+/* Ensure inner footer is also dark */
+footer#footer .inner {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
+/* ------------------------------------------------------------------ */
+</style>
+
+<style>
+     #header nav ul {
+         list-style: none;
+         padding-left: 0;
+         margin: 0;
+         text-align: left;
+     }
+
+     #header nav ul li {
+         margin-bottom: 0.8em;
+     }
+
+     #header nav ul li a {
+         display: block;
+         text-align: left;
+     }
+
+     #header nav ul li a i {
+         margin-right: 10px;
+         width: 20px;
+         text-align: center;
+     }
 </style>
 <style>
-    #header .inner .image.avatar {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
+     #header .inner .image.avatar {
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         text-align: center;
+     }
 </style>
 <style>
-    /* Footer Icon Styling from previous steps */
-    #footer .inner ul.icons li {
-        padding: 0 0.3em;
-        margin: 0;
-    }
+     /* Footer Icon Styling from previous steps */
+     #footer .inner ul.icons li {
+         padding: 0 0.3em;
+         margin: 0;
+     }
 
-    #footer .inner ul.icons li a {
-        width: 2.0em;
-        height: 2.0em;
-        font-size: 0.9em;
-        line-height: 2.0em;
-    }
+     #footer .inner ul.icons li a {
+         width: 2.0em;
+         height: 2.0em;
+         font-size: 0.9em;
+         line-height: 2.0em;
+     }
 
-    #footer .inner ul.copyright {
-        padding-top: 0.5em;
-        font-size: 0.8em;
-    }
+     #footer .inner ul.copyright {
+         padding-top: 0.5em;
+         font-size: 0.8em;
+     }
 </style>
-   <style>
-/* ... your existing styles ... */
-
+    <style>
 /* REVISED FIX for Main Content Alignment (Moving it LEFT) */
 @media screen and (min-width: 981px) {
     /* Aligns the main content past the fixed sidebar width */
@@ -69,8 +90,8 @@
         margin-left: 25em;
 
         /* Reduce the maximum width of the content area.
-           This pulls the right edge of the content inward, making the main column appear left-justified
-           and closer to the sidebar. Adjust 50em to your preference. */
+            This pulls the right edge of the content inward, making the main column appear left-justified
+            and closer to the sidebar. Adjust 50em to your preference. */
         max-width: 50em;
 
         /* The width should still take up the remaining space but respect the max-width */
@@ -79,8 +100,13 @@
 }
 </style>
 <style>
-/* ... your existing header/footer/alignment styles ... */
-
+/* FIX: Footer Visibility (Fixes collapsed #main container) */
+#main {
+    overflow: auto;
+    padding-bottom: 2em; /* Adds space above footer */
+}
+</style>
+<style>
 /* AGGRESSIVE FIX: Zeroing out all major vertical spaces */
 
 /* 1. Eliminate all top/bottom padding on the section container itself */
@@ -100,115 +126,184 @@
     margin-bottom: 0 !important;
 }
 </style>
+
 <style>
-/* ... your existing styles ... */
+/* 🚀 FINAL STYLES FOR RESEARCH WORK ITEMS: JUSTIFIED TEXT (EXCEPT LAST LINE) */
 
-/* FINAL FIX: Larger Image Size and Float Left */
+/* Style for work items to ensure proper layout */
+#main .work-item {
+    width: 100% !important;
+    margin-bottom: 2em !important;
+    overflow: hidden; /* Contains floated elements */
+}
+
+/* Fix: Ensure image scales within its container */
+#main .work-item .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Style for the floated image */
 #main .work-item .image.fit.thumb {
-    /* Float image to the left */
     float: left !important;
-
-    /* INCREASED PERCENTAGE FOR LARGER IMAGE SIZE */
-    width: 50% !important;
-
-    /* Add space to the right of the image */
-    margin: 0 1.5em 1em 0 !important;
-
-    /* Ensure no maximum width is constraining the image */
+    width: 40% !important; /* Retaining 40% width */
+    margin: 0 1.5% 1em 0 !important; /* Adjusted margin to percentage for calculation */
     max-width: none !important;
     padding: 0 !important;
 }
 
-/* Clear the float so the next article starts below */
+/* NEW: Wrapper for text content to ensure it stays to the right of the floated image */
+#main .work-item .text-content {
+    overflow: hidden; /* Creates a new block formatting context */
+    /* Push text content past the image (40% width + 1.5% margin) */
+    margin-left: calc(40% + 1.5%) !important;
+}
+
+
+#main .work-item h3 {
+    clear: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.5em !important;
+    /* Headings look best left-aligned */
+    text-align: left !important;
+}
+
+#main .work-item p {
+    /* Ensure paragraph text wraps properly */
+    clear: none !important;
+    margin: 0 !important;
+
+    /* 1. Justify all lines */
+    text-align: justify !important;
+
+    /* 2. Text layout enhancements */
+    text-justify: inter-word !important;
+    line-height: 1.6;
+
+    /* Add hyphenation for better word breaking */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Clear floats after each article to prevent layout issues */
 #main .work-item::after {
     content: "";
     display: table;
     clear: both;
 }
+
+/* Optional: Add minimum height to ensure consistent spacing */
+#main .work-item {
+    min-height: 150px;
+}
+
+/* Responsive adjustment for smaller screens */
+@media screen and (max-width: 980px) { /* Changed 736px to 980px for better sidebar consistency */
+    #main .work-item .image.fit.thumb {
+        float: none !important;
+        width: 100% !important;
+        margin: 0 0 1em 0 !important;
+    }
+    /* IMPORTANT: Reset margin-left on the text-content on small screens */
+    #main .work-item .text-content {
+        margin-left: 0 !important;
+    }
+}
 </style>
 
-   <body class="is-preload">
+    <body class="is-preload">
 
-      <header id="header">
-            <div class="inner">
-               <a href="#" class="image avatar"><img src="images/Profilowe2.jpg" alt="" /></a>
-         <h1><strong>Kamil Dreczkowski</strong></h1>
-            <br>
-            <nav>
-             <ul>
-                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                 <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
-                 <li><a href="research.html"><i class="fas fa-book"></i> Research</a></li>
-                 <li><a href="hobbies.html"><i class="fas fa-gamepad"></i> Hobbies</a></li>
-           </ul>
-            </nav>
-            </div>
-         </header>
+       <header id="header">
+             <div class="inner">
+                <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
+           <h1><strong>Kamil Dreczkowski</strong></h1>
+             <br>
+             <nav>
+              <ul>
+                   <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                   <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                   <li><a href="research.html"><i class="fas fa-book"></i> Research</a></li>
+                   <li><a href="hobbies.html"><i class="fas fa-gamepad"></i> Hobbies</a></li>
+             </ul>
+             </nav>
+             </div>
+           </header>
 <div id="main">
 
-    <section id="robot-learning">
-        <h2>Robot Learning</h2>
-        <div class="row">
+     <section id="robot-learning">
+         <h2>Robot Learning</h2>
+         <div class="row">
+         <p>Robot </p>
 
-            <article class="col-12 work-item">
-                <a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-                <h3>Learning a Thousand Tasks in a Day</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
+             <article class="col-12 work-item">
+                 <div class="image fit thumb"><img src="images/Adapting.gif" alt="" /></div>
 
-            <article class="col-12 work-item">
-                <a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-                <h3>Framework and Benchmarks for Combinatorial and Mixed-variable Bayesian Optimization</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
+                 <div class="text-content">
+                     <h3><a href="https://www.robot-learning.uk/adapting-skills" target="_blank">Adapting Skills to Novel Grasps: A Self-Supervised Approach</a></h3>
+                     <p>If a robot learns a skills with a grasped object (e.g. a tool), then that skill will usually fail if the robot grasps the object in a different way to when it learned the skill. In this work, we introduce a self-supervised data collection method, which enables a robot to adapt a skill to a novel grasp even though the skill was learned using a different grasp.</p>
+                 </div>
+             </article>
 
-            <article class="col-12 work-item">
-                <a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-                <h3>One-Shot Imitation Learning: A Pose Estimation Perspective</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-        </div>
-    </section>
+             <article class="col-12 work-item">
+                 <div class="image fit thumb"><img src="images/one-shot.gif" alt="" /></div>
 
-    <section id="computer-vision">
-        <h2>Computer Vision for Robotics</h2>
-        <div class="row">
+                 <div class="text-content">
+                     <h3><a href="https://www.robot-learning.uk/pose-estimation-perspective" target="_blank">One-Shot Imitation Learning: A Pose Estimation Perspective</a></h3>
+                     <p>Studied a novel combination of trajectory transfer and unseen object pose estimation, which enables new tasks to be learned from just a single demonstration, without requiring any further data collection or training. Under this formulation, experiments provide a deep dive into the effects of pose estimation errors and camera calibration errors on task success rates.</p>
+                 </div>
+             </article>
+      </div></section>
 
-            <article class="col-12 work-item">
-                <a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-                <h3>Learning Eye-in-Hand Calibration from a Single Image</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
+      <section id="Computer-vision">
+           <h2>Computer Vision for Robotics</h2>
+           <div class="row">
+               <p>Computer</p>
+             <article class="col-12 work-item">
+                 <div class="image fit thumb"><img src="images/eye-in-hand.gif" alt="" /></div>
 
-            <article class="col-12 work-item">
-                <a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-                <h3>Toward real-world automated antibody design with combinatorial Bayesian optimization</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-        </div>
-    </section>
+                 <div class="text-content">
+                     <h3><a href="https://www.robot-learning.uk/learning-eye-in-hand-calibration" target="_blank">Learning Eye-in-Hand Camera Calibration from a Single Image</a></h3>
+                     <p>Studied a range of different learning-based methods for extrinsic calibration of a wrist-mounted RGB camera, when given only a single RGB image from that camera. We found that a simple direct regression of calibration parameters performed the best, and also outperformed classical calibration methods based on markers.</p>
+                 </div>
+             </article>
 
-    <section id="combinatorial-bo">
-        <h2>Combinatorial Bayesian Optimisation</h2>
-        <div class="row">
+             <article class="col-12 work-item">
+                 <div class="image fit thumb"><img src="images/Hybrid-ICP.avif" alt="" /></div>
 
-            <article class="col-12 work-item">
-                <a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-                <h3>Hybrid ICP (First)</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
+                 <div class="text-content">
+                     <h3><a href="https://www.robot-learning.uk/hybrid-icp" target="_blank">Hybrid ICP</a></h3>
+                    <p> ICP algorithms typically involve a fixed choice of data association method and a fixed choice of error metric. In this paper, we propose a novel and flexible ICP variant, which dynamically optimises both the data association method and error metric based on the live image of an object and the current ICP estimate.</p>
+                 </div>
+             </article>
+      </div></section>
 
-            <article class="col-12 work-item">
-                <a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-                <h3>Hybrid ICP (Second)</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-        </div>
-    </section>
+      <section id="Combinatorial Bayesian Optimisation">
+            <h2>Combinatorial Bayesian Optimisation</h2>
+            <div class="row">
+                <p>Bayesian</p>
+             <article class="col-12 work-item">
+                 <div class="image fit thumb"><img src="images/MCBO.png" alt="" /></div>
 
-</div>
+                 <div class="text-content">
+                     <h3><a href="https://arxiv.org/abs/2306.09803" target="_blank">Framework and Benchmarks for Combinatorial and Mixed-variable Bayesian Optimization</a></h3>
+                     <p>We introduce a modular framework for Mixed-variable and Combinatorial Bayesian Optimization (MCBO) that addresses the field's lack of systematic benchmarking. The framework enables effortless combination of Bayesian Optimization components and provides diverse benchmarking tasks. We implemented 47 novel MCBO algorithms and benchmarked them against 12 existing solvers across ten tasks in over 4000 experiments. Results reveal a superior combination of MCBO primitives that outperforms existing approaches and demonstrate the importance of model fit and trust regions.</p>
+                 </div>
+             </article>
 
-<footer id="footer">
+             <article class="col-12 work-item">
+                 <div class="image fit thumb"><img src="images/antibody.jpg" alt="" /></div>
+
+                 <div class="text-content">
+                     <h3><a href="https://www.sciencedirect.com/science/article/pii/S2667237522002764" target="_blank">Toward real-world automated antibody design with combinatorial Bayesian optimization</a></h3>
+                    <p>Designing therapeutic antibodies requires optimizing both antigen-binding affinity and developability properties. We frame this as a combinatorial search problem where a black-box oracle simulates binding affinity from antibody-antigen sequence pairs. Since the vast antibody sequence space prevents exhaustive search both computationally and experimentally, we need efficient mechanisms to find optimal antibody sequences that maximize binding affinity while maintaining favorable biophysical properties.</p>
+                 </div>
+             </article>
+
+
+         </div> </section> </div> <footer id="footer">
    <div class="inner">
       <ul class="icons">
          <li><a href="https://scholar.google.com/citations?user=5hrKfnwAAAAJ&hl=en" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
@@ -218,7 +313,7 @@
          <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
       </ul>
       <ul class="copyright">
-         <li>&copy; Kamil Dreczkowski</li><li>Last updated November 2025</a></li>
+         <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
       </ul>
    </div>
 </footer>

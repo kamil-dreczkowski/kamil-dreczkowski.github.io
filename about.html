@@ -1,4 +1,4 @@
-         <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
    <head>
     <title>Kamil Dreczkowski - PAGE NAME</title>
@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="assets/css/main.css" />
    </head>
 
+<style>
+/* --- 1. COLOR CONSISTENCY FIX: Dark Sidebar/Footer (#191919) --- */
+
+/* Force the Sidebar (Header) to the desired dark shade */
+header#header {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
+
+/* Force the Footer to the desired dark shade */
+footer#footer {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
+
+/* Ensure inner footer is also dark */
+footer#footer .inner {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
+/* ------------------------------------------------------------------ */
+</style>
 <style>
     #header nav ul {
         list-style: none;
@@ -78,12 +100,72 @@
     }
 }
 </style>
+
+<style>
+/* 🚀 STYLES FOR #About-me-content: JUSTIFIED TEXT (EXCEPT LAST LINE) AND IMAGE WRAP */
+
+/* Container styles for float clearing */
+#About-me-content {
+    overflow: hidden; /* Ensures floats are contained */
+    margin-bottom: 2em;
+}
+
+/* Image styles for floating and wrapping (40% width) */
+#About-me-content .image.left {
+    float: left !important;
+    width: 40% !important;
+    margin: 0 1.5em 1em 0 !important;
+}
+
+/* Image content sizing */
+#About-me-content .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* *** TEXT JUSTIFICATION FIX (EXCEPT LAST LINE) *** */
+#About-me-content p {
+    margin: 0 0 1em 0 !important; /* Added bottom margin for paragraph separation */
+    /* 1. Justify all lines */
+    text-align: justify !important;
+
+    /* 2. Last line defaults to LEFT-ALIGNED for neatness */
+
+    text-justify: inter-word !important;
+    line-height: 1.6;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Clear floats after the section content */
+#About-me-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive adjustment for small screens */
+@media screen and (max-width: 736px) {
+    #About-me-content .image.left {
+        float: none !important;
+        width: 100% !important;
+        margin: 0 0 1em 0 !important;
+    }
+
+    #About-me-content p {
+        text-align: left !important;
+    }
+}
+</style>
    <body class="is-preload">
 
 
       <header id="header">
             <div class="inner">
-               <a href="#" class="image avatar"><img src="images/Profilowe2.jpg" alt="" /></a>
+               <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
          <h1><strong>Kamil Dreczkowski</strong></h1>
             <br>
             <nav>
@@ -97,18 +179,42 @@
             </div>
          </header>
    <div id="main">
-    <section id="About me-content">
+    <section id="About-me-content">
+                   <header class="major">
+                       <h2>About Me</h2>
                    </header>
 
                 <p>
                     <span class="image left"><img src="images/Iron.jpeg" alt="Your About Me Image" /></span>
-                    I am a Robotic Researcher working at the intersection of machine learning and robotics to push the boundaries of what robots can learn and do. My journey in robot learning began with my PhD at Imperial College London's Robot Learning Lab under Dr. Edward Johns, where I explored how machine learning can enable more effective robotic manipulation and control. I continued at Imperial as a postdoctoral researcher with Professor Antoine Cully, contributing to the DARPA-funded TRUSTLINE project under the Learning Introspective Control (LINC) program—developing technologies that help robots monitor and understand their own performance and reliability.
+                    I am a Robotic Researcher working at the intersection of machine learning and robotics to push the boundaries of what robots can learn and do. My journey in robot learning began with my PhD at Imperial College London's Robot Learning Lab under <a href="https://www.robot-learning.uk/" target="_blank">Dr. Edward Johns</a>, where I explored how machine learning can enable more effective robotic manipulation and control. I continued at Imperial as a postdoctoral researcher with <a href="https://profiles.imperial.ac.uk/a.cully" target="_blank">Professor Antoine Cully</a>, contributing to the DARPA-funded TRUSTLINE project under the Learning Introspective Control (LINC) program—developing technologies that help robots monitor and understand their own performance and reliability.
                 </p>
-                <p>
-                    My research spans from fundamental questions in robot learning to practical systems that work in the real world. I'm particularly passionate about developing machine learning algorithms that enable robots to handle diverse manipulation tasks. Recently, I had the pleasure of having my work, **"Learning a Thousand Tasks in a Day,"** published in *Science Robotics*, which you can read here.
-                </p>
+
                 <ul class="actions">
                 </ul>
             </section>
 
          </div>
+<footer id="footer">
+   <div class="inner">
+      <ul class="icons">
+         <li><a href="https://scholar.google.com/citations?user=5hrKfnwAAAAJ&hl=en" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
+         <li><a href="mailto:kamil-dreczkowski@outlook.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+         <li><a href="https://github.com/kamil-dreczkowski" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+         <li><a href="https://linkedin.com/in/kamil-dreczkowski/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+         <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
+      </ul>
+      <ul class="copyright">
+         <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
+      </ul>
+   </div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+   </body>
+</html>

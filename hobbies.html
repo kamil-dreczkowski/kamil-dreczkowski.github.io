@@ -9,6 +9,29 @@
    </head>
 
 <style>
+/* --- 1. COLOR CONSISTENCY FIX: Dark Sidebar/Footer (#191919) --- */
+
+/* Force the Sidebar (Header) to the desired dark shade */
+header#header {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
+
+/* Force the Footer to the desired dark shade */
+footer#footer {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
+
+/* Ensure inner footer is also dark */
+footer#footer .inner {
+    background: #191919 !important;
+    background-color: #191919 !important;
+}
+/* ------------------------------------------------------------------ */
+</style>
+
+<style>
     #header nav ul {
         list-style: none;
         padding-left: 0;
@@ -58,9 +81,7 @@
         font-size: 0.8em;
     }
 </style>
-   <style>
-/* ... your existing styles ... */
-
+<style>
 /* REVISED FIX for Main Content Alignment (Moving it LEFT) */
 @media screen and (min-width: 981px) {
     /* Aligns the main content past the fixed sidebar width */
@@ -78,11 +99,95 @@
     }
 }
 </style>
+<style>
+/* 🚀 UPDATED STYLES: JUSTIFIED TEXT (EXCEPT LAST LINE) AND ORIGINAL IMAGE SIZE */
+
+/* Style for the general content wrapper */
+#hobbies-content .hobby-article {
+    width: 100% !important;
+    margin-bottom: 2em !important;
+    overflow: hidden;
+}
+
+/* Style for the floated image container */
+#hobbies-content .image {
+    padding: 0;
+}
+
+/* Image sizing returned to original context (40% width) */
+#hobbies-content .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#hobbies-content .image.left {
+    float: left !important;
+    /* Image container width set back to 40% */
+    width: 40% !important;
+    margin: 0 1.5em 1em 0 !important;
+}
+
+#hobbies-content .image.right {
+    float: right !important;
+    /* Image container width set back to 40% */
+    width: 40% !important;
+    margin: 0 0 1em 1.5em !important;
+}
+
+/* Text alignment and justification */
+#hobbies-content h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0.5em !important;
+    text-align: left;
+}
+
+/* *** FIX HERE: Last line is now LEFT-ALIGNED for neatness *** */
+#hobbies-content p {
+    margin: 0 !important;
+    /* 1. Justify all lines */
+    text-align: justify !important;
+
+    /* 2. REMOVED: text-align-last: justify;
+          The last line will now align left by default, looking cleaner. */
+
+    text-justify: inter-word !important;
+    line-height: 1.6;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Clear floats and responsiveness */
+#hobbies-content .hobby-article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 736px) {
+    #hobbies-content .image.left,
+    #hobbies-content .image.right {
+        float: none !important;
+        width: 100% !important;
+        margin: 0 0 1em 0 !important;
+    }
+
+    #hobbies-content p {
+        /* Keep left alignment on small screens */
+        text-align: left !important;
+        text-align-last: auto !important;
+        -moz-text-align-last: auto !important;
+    }
+}
+</style>
+
    <body class="is-preload">
 
       <header id="header">
             <div class="inner">
-               <a href="#" class="image avatar"><img src="images/Profilowe2.jpg" alt="" /></a>
+               <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
          <h1><strong>Kamil Dreczkowski</strong></h1>
             <br>
             <nav>
@@ -102,23 +207,37 @@
             <h2>My Hobbies</h2>
         </header>
 
-        <h3>Karate</h3>
-        <p>
+        <section class="hobby-article">
+            <h3>Karate</h3>
             <span class="image left"><img src="images/karate.jpg" alt="Image related to Hobby One" /></span>
-            This is the first paragraph about your hobby. The image will appear on the **left side**, and your text will wrap neatly around it on the right. You can write about why you enjoy this activity, where you usually do it, or what inspired you to start. Ensure this paragraph is long enough (at least 4-5 lines) for the text to fully flow around the height of the image.
-        </p>
+            <p>
+                Karate has been the cornerstone of my life since I was six years old, shaping not just my physical abilities but my entire worldview. My dedication to this martial art has led to remarkable achievements, including becoming the FSKA world champion in kumite for the under-25 category in 2017-2018, and earlier claiming three WTKA world titles in kumite, kata, and team kumite in the 10-12 age group during 2009-2010. Beyond the competitions and accolades, karate represents my deepest passion—a discipline that has taught me respect, perseverance, and a profound appreciation for Japanese culture and the martial arts philosophy.
+            </p>
+        </section>
 
-        <h3>Travelling</h3>
-        <p>
-            <span class="image right"><img src="images/travel.jpg" alt="Image related to Hobby Two" /></span>
-            This is the second paragraph, and the image will float to the **right side**. Your text will wrap around the left side of the image. You can detail the technical aspects of this hobby, favorite projects, or specific equipment you use. Remember to use text long enough to make the wrapping look good!
-        </p>
+        <section class="hobby-article">
+            <h3>Travelling</h3>
+            <span class="image right"><img src="images/travel.png" alt="Image related to Hobby Two" /></span>
+            <p>
+                Exploring the world and immersing myself in diverse cultures has become an integral part of who I am. Having visited over 30 countries throughout my life, my most transformative journey was a five-month backpacking adventure across Asia, where I explored ten different countries. This extended trip wasn't just about seeing new places; it was about truly experiencing how different people live, think, and celebrate life. From bustling street markets to countryside villages, each destination offered unforgettable lessons and perspectives that have fundamentally broadened my understanding of the world.
+            </p>
+        </section>
 
-        <h3>Skydiving</h3>
-        <p>
+        <section class="hobby-article">
+            <h3>Adrenaline</h3>
             <span class="image left"><img src="images/skydive.jpg" alt="Image related to Hobby Three" /></span>
-            This is the final paragraph, returning the image to the **left side** for consistency. Here you can write about your intellectual or creative pursuits, favorite authors, or any unique collections you have. The template handles the necessary margins and floating automatically with these classes.
-        </p>
+            <p>
+                I thrive on pushing my boundaries through extreme sports that test both courage and composure. Whether free-falling through the sky while skydiving, taking the leap off a bungee platform, or coming face-to-face with sharks during a cage diving experience, these adrenaline-fueled experiences remind me that life's most rewarding moments often lie just beyond our comfort zone. Each challenge conquered reinforces my belief that fear is simply an invitation to grow stronger and more confident.
+            </p>
+        </section>
+
+        <section class="hobby-article">
+            <h3>Surfing</h3>
+            <span class="image right"><img src="images/Surfing.png" alt="Image related to Hobby Four" /></span>
+            <p>
+                Surfing has become my sanctuary—a perfect blend of challenge and tranquility that brings balance to my life. There's something magical about reading the ocean's rhythm, waiting for the perfect wave, and then harnessing its power for those fleeting moments of pure freedom. Each session leaves me with a profound sense of achievement and satisfaction, while the meditative aspects of being in the water wash away stress and bring a deep sense of relaxation. It's where I find my peace and reconnect with myself.
+            </p>
+        </section>
     </section>
 </div>
 
@@ -132,7 +251,7 @@
          <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
       </ul>
       <ul class="copyright">
-         <li>&copy; Kamil Dreczkowski</li><li>Last updated November 2025</a></li>
+         <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
       </ul>
    </div>
 </footer>

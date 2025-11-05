@@ -1,310 +1,176 @@
 <!DOCTYPE HTML>
 <html>
-   <head>
+<head>
     <title>Kamil Dreczkowski | Researcher & Engineer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/main.css" />
-   </head>
 
-<style>
-/* ------------------------------------------------------------------- */
-/* 1. LAYOUT AND SCROLL TRANSITION FIX (CRITICAL) */
-/* ------------------------------------------------------------------- */
+    <style>
+    /* ------------------------------------------------------------------- */
+    /* 1. LAYOUT AND SCROLL TRANSITION FIX (CRITICAL) */
+    /* --- AMENDED: FOCUS ON RIGHT SIDE AND NO SCROLL --- */
 
-/* NEW: Fixed Background Element (Placed outside the main content flow) */
-#fixed-hero-background {
-    position: fixed;
-    top: 0;
-    /* Needs to start exactly where the sidebar ends (Strata default is 20em) */
-    left: 18.8em;
-    width: calc(100% - 20em); /* Fill the rest of the viewport */
-    height: 100vh;
-    /* Z-index 0: This is the lowest element, serving as the fixed background */
-    z-index: 0;
-
-    /* Image styles */
-    background-image: url('images/Robot1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Placeholder section to push content down one viewport height */
-#content-placeholder {
-    height: 100vh;
-    /* This section is intentionally empty to reserve space for the fixed image */
-}
-
-/* Ensure #main is set up for the scrollable content */
-@media screen and (min-width: 981px) {
-    #main {
-        margin-left: 20em;
-        width: calc(100% - 20em);
-        padding-top: 0 !important;
-        /* CRITICAL FIX: Force the background of the main content wrapper (Tier 2 of defense) */
-        background-color: #222222 !important;
+    /* CRITICAL: Disables scrolling on the entire page */
+    body {
+        overflow: hidden !important;
+        background-color: #000000 !important;
+        background-image: image/robot1.jpg !important;
     }
-}
 
-/* ------------------------------------------------------------------- */
-/* 2. GLASS BOX AND TEXT STYLES (FINALIZED: Black/Blue Text, No Margin) */
-/* ------------------------------------------------------------------- */
-
-.hero-content {
-    position: relative;
-    /* Z-index 10: Ensures the glass box sits above the fixed background (0) */
-    z-index: 10;
-
-    /* Padding to control the size of the glass box around the text */
-    /* REDUCED horizontal padding to 5em (from 29em) to allow the text to spread out */
-    padding: 9em 5em;
-
-    /* Base text color for all elements is BLACK */
-    color: #000000 !important;
-    text-align: left !important;
-
-    /* GLASS MORPHISM EFFECT */
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
-    text-shadow: none;
-    margin-bottom: 2em; /* Spacing below the box before the next section */
-}
-
-/* AGGRESSIVE FIX: Target ALL children inside the box to force black color */
-.hero-content * {
-    color: #000000 !important;
-}
-
-/* Welcome Line (h1) Styling - Black */
-.hero-content .welcome-line {
-    font-size: 3em !important;
-    font-weight: Bold !important;
-    line-height: 1.1em;
-    color: #000000 !important;
-    margin-bottom: 0 !important; /* Eliminates space below H1 */
-}
-
-/* Summary Line (p) Styling - Black */
-.hero-content .summary-line {
-    font-size: 2em !important;
-    font-weight: 800;
-    line-height: 1.4em;
-    color: #000000 !important;
-    margin-top: 0 !important; /* Eliminates space above P */
-}
-
-/* FINAL FIX: Interactive Word - Dark Blue (Overrides the black color only for the span) */
-#interactive-word {
-    color: #1A237E !important; /* Deep Indigo Blue */
-    font-weight: 900 !important;
-}
-
-/* Responsive adjustment for padding on small screens */
-@media screen and (max-width: 736px) {
-    /* Adjust fixed background for mobile sidebar disappearance */
+    /* Fixed Background Element (Placed outside the main content flow) */
     #fixed-hero-background {
-        left: 0;
-        width: 100%;
+        position: fixed; /* CRITICAL: Makes it stay put */
+        top: 0;
+        /* Kept original value to start exactly where the sidebar ends */
+        left: 18.8em;
+        width: calc(100% - 20em); /* Fill the rest of the viewport */
+        height: 100vh;
+        z-index: 0;
+
+        /* Image styles */
+        background-image: url('images/Robot1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
-    .hero-content {
-        padding: 2em 3em;
+    /* CRITICAL: Hide placeholder and content sections to prevent overlay and scroll */
+    #content-placeholder,
+    #one, #two, #three {
+        display: none !important;
+        height: 0 !important;
+        padding: 0 !important;
+        background-color: transparent !important;
     }
-    .hero-content .welcome-line {
-        font-size: 3em !important;
-    }
-    .hero-content .summary-line {
-        font-size: 1.5em !important;
-    }
-}
-
-/* ------------------------------------------------------------------- */
-/* 3. MENU AND FOOTER STYLES (Retained from your original code) */
-/* ------------------------------------------------------------------- */
-#header nav ul { list-style: none; padding-left: 0; margin: 0; text-align: left; }
-#header nav ul li { margin-bottom: 0.8em; }
-#header nav ul li a { display: block; text-align: left; }
-#header nav ul li a i { margin-right: 10px; width: 20px; text-align: center; }
-#header .inner .image.avatar { display: block; margin-left: auto; margin-right: auto; text-align: center; }
-#footer .inner ul.icons li { padding: 0 0.3em; margin: 0; }
-#footer .inner ul.icons li a { width: 2.0em; height: 2.0em; font-size: 0.9em; line-height: 2.0em; }
-#footer .inner ul.copyright { padding-top: 0.5em; font-size: 0.8em; }
 
 
-/* ------------------------------------------------------------------- */
-/* 4. SOLID WHITE BACKGROUND START & FOOTER/HEADER COLOR FIXES */
-/* ------------------------------------------------------------------- */
+    /* Ensure #main is set up to be transparent and non-scrollable on the right side */
+    @media screen and (min-width: 981px) {
+        #main {
+            /* Keep original positioning for the right side */
+            margin-left: 20em;
+            width: calc(100% - 20em);
+            padding-top: 0 !important;
 
-/* CRITICAL: Set the sections after the hero to solid white and remove unnecessary spacing */
-#one, #two, #three {
-    background-color: #ffffff !important;
-    position: relative;
-    /* Z-index 5: Ensures these sections sit above the fixed background (0) */
-    z-index: 5;
-    /* Fix: Ensure the last section doesn't push a white margin/padding into the footer space */
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
+            /* CRITICAL: Remove scrolling */
+            overflow: hidden !important;
 
-/* CRITICAL FIX: Set the body background itself to dark grey (Tier 1 of defense) */
-body {
-    background-color: #222222 !important;
-    background-image: none !important;
-    background-attachment: scroll !important;
-}
+            /* CRITICAL: Force transparent background so the image shows */
+            background-color: transparent !important;
 
-/* NEW FIX: Aggressively enforce dark background on the fixed sidebar (header) for color matching */
-header#header {
-    background: #222222 !important;
-    background-color: #222222 !important;
-    color: #ffffff !important;
-}
-
-
-/* FOOTER RESTORATION FIX - Super Aggressive Targeting (Tier 3 of defense) */
-footer#footer {
-    /* Critical: Force the background color using multiple properties */
-    background: #222222 !important;
-    background-color: #222222 !important;
-    color: #ffffff !important;
-    position: relative;
-    z-index: 5;
-    /* Ensure no margins push the footer away from content */
-    margin-top: 0 !important;
-}
-
-/* Target the inner container of the footer, which might also have an inherited background */
-footer#footer .inner {
-    background: #222222 !important;
-    background-color: #222222 !important;
-    color: #ffffff !important;
-}
-
-/* Ensure links and icons inside the footer are also white/light to be visible */
-#footer a {
-    color: #ffffff !important;
-}
-</style>
-
-   <body class="is-preload">
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const interactiveWordElement = document.getElementById('interactive-word');
-        // Define the words and the delay (in milliseconds)
-        const words = ['Researcher', 'Engineer'];
-        const typingSpeed = 100; // Delay between typing letters
-        const deletingSpeed = 50;  // Delay between deleting letters
-        const delayBeforeNextWord = 1500; // Pause after word is fully typed
-
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function typeWriterEffect() {
-            const currentWord = words[wordIndex];
-
-            if (isDeleting) {
-                // DELETE phase
-                interactiveWordElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                // TYPE phase
-                interactiveWordElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                // Word is fully typed, start deleting after a delay
-                isDeleting = true;
-                setTimeout(typeWriterEffect, delayBeforeNextWord);
-            } else if (isDeleting && charIndex === 0) {
-                // Word is fully deleted, move to the next word
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length; // Cycle to the next word
-                setTimeout(typeWriterEffect, 500); // Small pause before typing next word
-            } else {
-                // Continue typing or deleting
-                const speed = isDeleting ? deletingSpeed : typingSpeed;
-                setTimeout(typeWriterEffect, speed);
-            }
+            /* Ensure it fills the height of the viewport */
+            height: 100vh;
+            position: relative;
         }
+    }
 
-        // Start the effect when the page loads
-        typeWriterEffect();
-    });
-</script>
+    /* ------------------------------------------------------------------- */
+    /* 3. MENU AND FOOTER STYLES (NO CHANGES HERE - Standard Strata Sidebar) */
+    /* ------------------------------------------------------------------- */
+    #header nav ul { list-style: none; padding-left: 0; margin: 0; text-align: left; }
+    #header nav ul li { margin-bottom: 0.8em; }
+    #header nav ul li a { display: block; text-align: left; }
+    #header nav ul li a i { margin-right: 10px; width: 20px; text-align: center; }
+    #header .inner .image.avatar { display: block; margin-left: auto; margin-right: auto; text-align: center; }
+    #footer .inner ul.icons li { padding: 0 0.3em; margin: 0; }
+    #footer .inner ul.icons li a { width: 2.0em; height: 2.0em; font-size: 0.9em; line-height: 2.0em; }
+    #footer .inner ul.copyright { padding-top: 0.5em; font-size: 0.8em; }
 
-      <!-- Header (Sidebar) -->
-         <header id="header">
-            <div class="inner">
-               <a href="#" class="image avatar"><img src="images/Profilowe2.jpg" alt="" /></a>
-         <h1><strong>Kamil Dreczkowski</strong></h1>
+
+    /* ------------------------------------------------------------------- */
+    /* 4. BACKGROUND COLOR CONSISTENCY FIXES (APPLY TO LEFT BAR ELEMENTS) */
+    /* ------------------------------------------------------------------- */
+
+    /* NEW FIX: Aggressively enforce dark background on the fixed sidebar (header) */
+    header#header {
+        background: #191919 !important;
+        background-color: #191919 !important;
+        color: #ffffff !important;
+    }
+
+
+    /* FOOTER RESTORATION FIX - Target the footer that is *outside* the main content flow */
+    /* If your template places the footer/icons at the bottom of the fixed sidebar,
+       we ensure it uses the dark color and remains visible. */
+    footer#footer {
+        /* Critical: Keep the standard sidebar background */
+        background: #191919 !important;
+        background-color: #191919 !important;
+        color: #ffffff !important;
+
+        /* Ensure the footer is NOT hidden (undoing previous error) */
+        display: block !important;
+
+        position: relative;
+        z-index: 5;
+        margin-top: 0 !important;
+    }
+
+    /* Target the inner container of the footer */
+    footer#footer .inner {
+        background: #191919 !important;
+        background-color: #191919 !important;
+        color: #ffffff !important;
+    }
+
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <header id="header">
+        <div class="inner">
+            <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
+            <h1><strong>Kamil Dreczkowski</strong></h1>
             <br>
             <nav>
-             <ul>
-                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                 <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
-                 <li><a href="research.html"><i class="fas fa-book"></i> Research</a></li>
-                 <li><a href="hobbies.html"><i class="fas fa-gamepad"></i> Hobbies</a></li>
-           </ul>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                    <li><a href="research.html"><i class="fas fa-book"></i> Research</a></li>
+                    <li><a href="hobbies.html"><i class="fas fa-gamepad"></i> Hobbies</a></li>
+                </ul>
             </nav>
-            </div>
-         </header>
+        </div>
+    </header>
 
-        <!-- NEW: Fixed Background Image -->
-        <div id="fixed-hero-background"></div>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://scholar.google.com/citations?user=5hrKfnwAAAAJ&hl=en" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
+                <li><a href="mailto:kamil-dreczkowski@outlook.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                <li><a href="https://github.com/kamil-dreczkowski" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://linkedin.com/in/kamil-dreczkowski/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
+            </ul>
+        </div>
+    </footer>
 
-      <!-- Main Content (Scrollable) -->
-        <div id="main">
-            <!-- 1. Full-Height Placeholder (Creates the initial fold) -->
-            <section id="content-placeholder"></section>
 
-            <!-- 2. Glass Box Content (Appears just after the fold and scrolls up) -->
-            <section id="hero-overlay-content">
-                <div class="hero-content">
-                    <h1 class="welcome-line">Welcome!</h1>
-                    <br>
-                    <p class="summary-line">
-                        I am a <span id="interactive-word">Researcher</span> focused on pioneering next-generation Robot Learning systems. This site showcases my expertise in Computer Vision, autonomous control, and advanced Bayesian Optimization techniques for real-world robotic applications.
-                    </p>
+    <div id="fixed-hero-background"></div>
+
+    <div id="main">
+        <section id="content-placeholder"></section>
+        <section id="one" class="dark-section">
+            <div class="inner">
+                <h2>Welcome</h2>
+                <p>Content is hidden.</p>
                 </div>
-            </section>
+        </section>
 
-            <!-- 3. About Me Section (Follows the glass box, with new content) -->
-            <section id="one">
-                <header class="major">
-                    <h2>About Me<br /></h2>
+        </div>
 
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-
-<!-- Footer -->
-<footer id="footer">
-   <div class="inner">
-      <ul class="icons">
-         <li><a href="https://scholar.google.com/citations?user=5hrKfnwAAAAJ&hl=en" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
-         <li><a href="mailto:kamil-dreczkowski@outlook.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-         <li><a href="https://github.com/kamil-dreczkowski" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-         <li><a href="https://linkedin.com/in/kamil-dreczkowski/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-         <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
-      </ul>
-      <ul class="copyright">
-         <li>&copy; Kamil Dreczkowski</li><li>Last updated November 2025</a></li>
-      </ul>
-   </div>
-</footer>
-
-      <!-- Scripts -->
-         <script src="assets/js/jquery.min.js"></script>
-         <script src="assets/js/jquery.poptrox.min.js"></script>
-         <script src="assets/js/browser.min.js"></script>
-         <script src="assets/js/breakpoints.min.js"></script>
-         <script src="assets/js/util.js"></script>
-         <script src="assets/js/main.js"></script>
-
-   </body>
+</body>
 </html>
