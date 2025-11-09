@@ -167,18 +167,19 @@
         /* Use the ID selector #one to win the specificity battle */
         #main section#one {
             position: relative !important;
-            height: 60vh !important; /* This sets the height for mobile */
+            height: auto !important; /* Auto height to fit image */
             width: 100% !important;
-            overflow: hidden; /* Good practice */
+            overflow: hidden;
         }
 
         /* --- UPDATED FOR CONSISTENCY --- */
         /* This image should fill its parent (section#one) */
         #main section#one img.main-hero-image {
             position: relative !important;
-            height: 100% !important; /* Fills the 60vh parent */
-            width: 100% !important;
-            object-fit: cover !important; /* Re-add object-fit */
+            height: auto !important; /* Auto height maintains aspect ratio */
+            width: 100% !important; /* Full width of mobile device */
+            object-fit: contain !important; /* Show entire image without cropping */
+            display: block !important;
         }
     }
     /* *** END: CORRECTED MOBILE STYLES ***
