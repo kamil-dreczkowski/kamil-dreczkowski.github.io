@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
    <head>
-    <title>Kamil Dreczkowski - PAGE NAME</title>
+    <title>Kamil Dreczkowski | Hobbies</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -61,9 +61,18 @@ footer#footer .inner {
         margin-right: auto;
         text-align: center;
     }
+
+    /* Add left alignment for the name heading */
+    #header .inner h1 {
+        text-align: left;
+    }
 </style>
 <style>
     /* Footer Icon Styling from previous steps */
+    #footer .inner ul.icons {
+        text-align: left;
+    }
+
     #footer .inner ul.icons li {
         padding: 0 0.3em;
         margin: 0;
@@ -79,6 +88,7 @@ footer#footer .inner {
     #footer .inner ul.copyright {
         padding-top: 0.5em;
         font-size: 0.8em;
+        text-align: left;
     }
 </style>
 <style>
@@ -114,25 +124,46 @@ footer#footer .inner {
     padding: 0;
 }
 
-/* Image sizing returned to original context (40% width) */
+/* Image sizing updated to 55% width with higher specificity */
 #hobbies-content .image img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-#hobbies-content .image.left {
+#hobbies-content .hobby-article .image.left,
+#hobbies-content section .image.left,
+#main #hobbies-content .image.left {
     float: left !important;
-    /* Image container width set back to 40% */
-    width: 40% !important;
+    /* Image container width set to 55% */
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
     margin: 0 1.5em 1em 0 !important;
 }
 
-#hobbies-content .image.right {
+#hobbies-content .hobby-article .image.right,
+#hobbies-content section .image.right,
+#main #hobbies-content .image.right {
     float: right !important;
-    /* Image container width set back to 40% */
-    width: 40% !important;
+    /* Image container width set to 55% */
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
     margin: 0 0 1em 1.5em !important;
+}
+
+/* Additional specificity for span elements */
+#hobbies-content span.image.left {
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
+}
+
+#hobbies-content span.image.right {
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
 }
 
 /* Text alignment and justification */
@@ -183,11 +214,32 @@ footer#footer .inner {
 }
 </style>
 
+<!-- FINAL OVERRIDE: Force 55% image width with maximum specificity -->
+<style>
+body #main #hobbies-content span.image.left,
+body #main #hobbies-content span.image.right,
+html body div#main section#hobbies-content section.hobby-article span.image.left,
+html body div#main section#hobbies-content section.hobby-article span.image.right {
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
+}
+
+/* Also target the wrapper spans directly */
+#main span.image[class*="left"] {
+    width: 55% !important;
+}
+
+#main span.image[class*="right"] {
+    width: 55% !important;
+}
+</style>
+
    <body class="is-preload">
 
       <header id="header">
             <div class="inner">
-               <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
+               <a href="#" class="image avatar"><img src="images/kamil-dreczkowski.png" alt="" /></a>
          <h1><strong>Kamil Dreczkowski</strong></h1>
             <br>
             <nav>
@@ -224,7 +276,7 @@ footer#footer .inner {
         </section>
 
         <section class="hobby-article">
-            <h3>Adrenaline</h3>
+            <h3>Seeking Adrenaline</h3>
             <span class="image left"><img src="images/skydive.jpg" alt="Image related to Hobby Three" /></span>
             <p>
                 I thrive on pushing my boundaries through extreme sports that test both courage and composure. Whether free-falling through the sky while skydiving, taking the leap off a bungee platform, or coming face-to-face with sharks during a cage diving experience, these adrenaline-fueled experiences remind me that life's most rewarding moments often lie just beyond our comfort zone. Each challenge conquered reinforces my belief that fear is simply an invitation to grow stronger and more confident.
@@ -238,6 +290,11 @@ footer#footer .inner {
                 Surfing has become my sanctuary—a perfect blend of challenge and tranquility that brings balance to my life. There's something magical about reading the ocean's rhythm, waiting for the perfect wave, and then harnessing its power for those fleeting moments of pure freedom. Each session leaves me with a profound sense of achievement and satisfaction, while the meditative aspects of being in the water wash away stress and bring a deep sense of relaxation. It's where I find my peace and reconnect with myself.
             </p>
         </section>
+         <section class="hobby-article">
+            <h3>Board Games</h3>
+            <span class="image left"><img src="images/Boardgames.jpg" alt="Image related to Hobby Five" /></span>
+            <p>
+            In quieter moments away from physical pursuits, I find deep satisfaction in the strategic world of board games, particularly cooperative experiences that challenge players to work together against the game itself. Games like Journeys in Middle-earth and Gloomhaven have captured my imagination with their intricate mechanics and immersive storytelling, offering adventures that unfold over countless hours of tactical decision-making and collaborative problem-solving. There's something uniquely rewarding about gathering around a table with friends, diving into complex scenarios where every choice matters, and celebrating shared victories earned through careful planning and teamwork. These games provide a different kind of thrill—one that exercises the mind rather than the body, yet delivers the same sense of accomplishment when overcoming seemingly impossible challenges together.            </p>
     </section>
 </div>
 
@@ -251,7 +308,7 @@ footer#footer .inner {
          <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
       </ul>
       <ul class="copyright">
-         <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
+          <li>kamil-dreczkowski@outlook.com</a></li>
       </ul>
    </div>
 </footer>

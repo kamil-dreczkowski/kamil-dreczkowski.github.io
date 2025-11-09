@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
    <head>
-    <title>Kamil Dreczkowski - PAGE NAME</title>
+    <title>Kamil Dreczkowski | About</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -60,9 +60,18 @@ footer#footer .inner {
         margin-right: auto;
         text-align: center;
     }
+
+    /* Add left alignment for the name heading */
+    #header .inner h1 {
+        text-align: left;
+    }
 </style>
 <style>
     /* Footer Icon Styling from previous steps */
+    #footer .inner ul.icons {
+        text-align: left;
+    }
+
     #footer .inner ul.icons li {
         padding: 0 0.3em;
         margin: 0;
@@ -78,6 +87,7 @@ footer#footer .inner {
     #footer .inner ul.copyright {
         padding-top: 0.5em;
         font-size: 0.8em;
+        text-align: left;
     }
 </style>
    <style>
@@ -106,15 +116,38 @@ footer#footer .inner {
 
 /* Container styles for float clearing */
 #About-me-content {
-    overflow: hidden; /* Ensures floats are contained */
-    margin-bottom: 2em;
+    width: 100% !important;
+    margin-bottom: 2em !important;
+    overflow: hidden;
 }
 
-/* Image styles for floating and wrapping (40% width) */
+/* Content wrapper for each section with image */
+#About-me-content .content-wrapper {
+    width: 100% !important;
+    margin-bottom: 2em !important;
+    overflow: hidden;
+}
+
+/* Style for the floated image container */
+#About-me-content .image {
+    padding: 0;
+}
+
+/* Image styles for floating and wrapping - UPDATED TO 55% WIDTH */
 #About-me-content .image.left {
     float: left !important;
-    width: 40% !important;
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
     margin: 0 1.5em 1em 0 !important;
+}
+
+#About-me-content .image.right {
+    float: right !important;
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
+    margin: 0 0 1em 1.5em !important;
 }
 
 /* Image content sizing */
@@ -124,13 +157,36 @@ footer#footer .inner {
     display: block;
 }
 
-/* *** TEXT JUSTIFICATION FIX (EXCEPT LAST LINE) *** */
+/* Additional specificity for span elements to ensure 55% width */
+#About-me-content span.image.left,
+#About-me-content p span.image.left {
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
+}
+
+#About-me-content span.image.right,
+#About-me-content p span.image.right {
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
+}
+
+/* Text alignment and justification - matching hobbies page */
+#About-me-content h2,
+#About-me-content h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0.5em !important;
+    text-align: left;
+}
+
+/* *** TEXT JUSTIFICATION MATCHING HOBBIES PAGE *** */
 #About-me-content p {
-    margin: 0 0 1em 0 !important; /* Added bottom margin for paragraph separation */
+    margin: 0 !important;
     /* 1. Justify all lines */
     text-align: justify !important;
 
-    /* 2. Last line defaults to LEFT-ALIGNED for neatness */
+    /* 2. Last line aligns left by default for cleaner appearance */
 
     text-justify: inter-word !important;
     line-height: 1.6;
@@ -141,7 +197,8 @@ footer#footer .inner {
 }
 
 /* Clear floats after the section content */
-#About-me-content::after {
+#About-me-content::after,
+#About-me-content .content-wrapper::after {
     content: "";
     display: table;
     clear: both;
@@ -149,23 +206,53 @@ footer#footer .inner {
 
 /* Responsive adjustment for small screens */
 @media screen and (max-width: 736px) {
-    #About-me-content .image.left {
+    #About-me-content .image.left,
+    #About-me-content .image.right {
         float: none !important;
         width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
         margin: 0 0 1em 0 !important;
     }
 
     #About-me-content p {
+        /* Keep left alignment on small screens */
         text-align: left !important;
+        text-align-last: auto !important;
+        -moz-text-align-last: auto !important;
     }
 }
 </style>
+
+<!-- FINAL OVERRIDE: Force 55% image width with maximum specificity -->
+<style>
+body #main #About-me-content span.image.left,
+body #main #About-me-content span.image.right,
+body #main #About-me-content p span.image.left,
+body #main #About-me-content p span.image.right,
+html body div#main section#About-me-content span.image.left,
+html body div#main section#About-me-content span.image.right {
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
+}
+
+/* Also target the wrapper spans directly with attribute selectors */
+#main #About-me-content span.image[class*="left"] {
+    width: 55% !important;
+}
+
+#main #About-me-content span.image[class*="right"] {
+    width: 55% !important;
+}
+</style>
+
    <body class="is-preload">
 
 
       <header id="header">
             <div class="inner">
-               <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
+               <a href="#" class="image avatar"><img src="images/kamil-dreczkowski.png" alt="" /></a>
          <h1><strong>Kamil Dreczkowski</strong></h1>
             <br>
             <nav>
@@ -180,20 +267,34 @@ footer#footer .inner {
          </header>
    <div id="main">
     <section id="About-me-content">
-                   <header class="major">
-                       <h2>About Me</h2>
-                   </header>
+        <header class="major">
+            <h2>About Me</h2>
+        </header>
 
-                <p>
-                    <span class="image left"><img src="images/Iron.jpeg" alt="Your About Me Image" /></span>
-                    I am a Robotic Researcher working at the intersection of machine learning and robotics to push the boundaries of what robots can learn and do. My journey in robot learning began with my PhD at Imperial College London's Robot Learning Lab under <a href="https://www.robot-learning.uk/" target="_blank">Dr. Edward Johns</a>, where I explored how machine learning can enable more effective robotic manipulation and control. I continued at Imperial as a postdoctoral researcher with <a href="https://profiles.imperial.ac.uk/a.cully" target="_blank">Professor Antoine Cully</a>, contributing to the DARPA-funded TRUSTLINE project under the Learning Introspective Control (LINC) program—developing technologies that help robots monitor and understand their own performance and reliability.
-                </p>
+        <div class="content-wrapper">
+            <span class="image left"><img src="images/kamil-dreczkowski-ironing.jpeg" alt="Kamil Dreczkowski teaching a robot how to iron a shirt." /></span>
+<!--            <p>-->
+<!--                I am a Robotic Researcher working at the intersection of machine learning and robotics to push the boundaries of what robots can learn and do. My journey in robot learning began with my PhD at Imperial College London's Robot Learning Lab under <a href="https://www.robot-learning.uk/" target="_blank">Dr. Edward Johns</a>, where I explored how machine learning can enable more effective robotic manipulation and control. I continued at Imperial as a postdoctoral researcher with <a href="https://profiles.imperial.ac.uk/a.cully" target="_blank">Professor Antoine Cully</a>, contributing to the DARPA-funded TRUSTLINE project under the Learning Introspective Control (LINC) program—developing technologies that help robots monitor and understand their own performance and reliability.-->
+<!--            </p>-->
+            <p>
+                 I am a Robotics Researcher working at the intersection of robotics, machine learning, and computer vision to advance robot manipulation capabilities. My research focuses on reducing the data requirements for robot learning, enabling robots to acquire new skills from minimal demonstration data while performing reliably in real-world environments.
+            </p>
+            <br>
+            <p>
+                My journey in robot learning began with my PhD at Imperial College London's <a href="https://www.robot-learning.uk/" target="_blank">Robot Learning Lab</a> under <a href="https://profiles.imperial.ac.uk/e.johns" target="_blank">Dr. Edward Johns</a>, where I focused on leveraging inductive biases to enable robots to learn new manipulation tasks from less than a minute of human demonstration time. I then joined the <a href="https://www.imperial.ac.uk/adaptive-intelligent-robotics" target="_blank">Adaptive and Intelligent Robotics Lab (AIRL)</a> as a Research Associate in Robot Learning and Fast Recovery, working with <a href="https://profiles.imperial.ac.uk/a.cully" target="_blank">Professor Antoine Cully</a> on DARPA's TRUSTLINE project, which is part of the <a href="https://www.darpa.mil/research/programs/learning-introspective-control" target="_blank">Learning Introspective Control (LINC)</a> program. TRUSTLINE develops machine learning-based introspection and monitoring technologies that enable robotic systems to detect and understand ongoing situations as they encounter uncertainty or unexpected events, while communicating these changes to human or AI operators to maintain confidence and operational continuity.
+            </p>
+            <br>
+<!--            <br>-->
+            <span class="image right"><img src="images/kamil-dreczkowski-programming.png" alt="Kamil Dreczkowski programming on a computer." /></span>
+            <p>
+            Beyond robot manipulation, my research extends to mixed-variable and combinatorial Bayesian optimization, with applications to autonomous antibody design and logic circuit optimization. I am passionate about pushing the boundaries of robot learning, developing methods that dramatically reduce data requirements and enable robots to be deployed effectively in everyday environments. If you'd like to discuss my research or just have a chat, feel free to reach out!
+            </p>
+        </div>
 
-                <ul class="actions">
-                </ul>
-            </section>
-
-         </div>
+        <ul class="actions">
+        </ul>
+    </section>
+</div>
 <footer id="footer">
    <div class="inner">
       <ul class="icons">
@@ -204,7 +305,7 @@ footer#footer .inner {
          <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
       </ul>
       <ul class="copyright">
-         <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
+          <li>kamil-dreczkowski@outlook.com</a></li>
       </ul>
    </div>
 </footer>

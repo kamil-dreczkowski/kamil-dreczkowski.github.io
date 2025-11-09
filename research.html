@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-     <title>Kamil Dreczkowski - PAGE NAME</title>
+     <title>Kamil Dreczkowski | Research</title>
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,6 +27,20 @@ footer#footer {
 footer#footer .inner {
     background: #191919 !important;
     background-color: #191919 !important;
+}
+
+/* 🎨 FIX: Ensure images and icons are NOT grayish */
+#header .image.avatar img,
+#footer .inner ul.icons li a .icon,
+#footer .inner ul.icons li a {
+    filter: none !important; /* Remove any grayscale filter */
+    opacity: 1 !important;   /* Ensure full opacity */
+    background-color: transparent !important; /* Ensure background doesn't affect icon color */
+}
+
+/* Also ensure the Font Awesome icons themselves are white in the footer */
+#footer .inner ul.icons li a i {
+    color: #ffffff !important; /* Explicitly set icon color to white */
 }
 /* ------------------------------------------------------------------ */
 </style>
@@ -61,9 +75,18 @@ footer#footer .inner {
          margin-right: auto;
          text-align: center;
      }
+
+     /* Add left alignment for the name heading */
+     #header .inner h1 {
+         text-align: left;
+     }
 </style>
 <style>
      /* Footer Icon Styling from previous steps */
+     #footer .inner ul.icons {
+         text-align: left;
+     }
+
      #footer .inner ul.icons li {
          padding: 0 0.3em;
          margin: 0;
@@ -79,6 +102,7 @@ footer#footer .inner {
      #footer .inner ul.copyright {
          padding-top: 0.5em;
          font-size: 0.8em;
+         text-align: left;
      }
 </style>
     <style>
@@ -147,21 +171,25 @@ footer#footer .inner {
 /* Style for the floated image */
 #main .work-item .image.fit.thumb {
     float: left !important;
-    width: 40% !important; /* Retaining 40% width */
+    width: 43% !important; /* Retaining 40% width */
     margin: 0 1.5% 1em 0 !important; /* Adjusted margin to percentage for calculation */
     max-width: none !important;
     padding: 0 !important;
+
+    /* 🖼️ NEW FIX: Add a light grey border */
+    border: 1px solid #ccc !important; /* Light grey border */
+    box-sizing: border-box !important; /* Ensure border is included in the 43% width */
 }
 
 /* NEW: Wrapper for text content to ensure it stays to the right of the floated image */
 #main .work-item .text-content {
     overflow: hidden; /* Creates a new block formatting context */
-    /* Push text content past the image (40% width + 1.5% margin) */
-    margin-left: calc(40% + 1.5%) !important;
+    /* Push text content past the image (43% width + 1.5% margin) */
+    margin-left: calc(43% + 1.5%) !important;
 }
 
 
-#main .work-item h3 {
+#main .work-item h3 { /* Changed h3 to h2 in HTML below, so this CSS still targets it if you change it back */
     clear: none !important;
     margin-top: 0 !important;
     margin-bottom: 0.5em !important;
@@ -206,6 +234,7 @@ footer#footer .inner {
         float: none !important;
         width: 100% !important;
         margin: 0 0 1em 0 !important;
+        border: none !important; /* Remove border on small screens if preferred */
     }
     /* IMPORTANT: Reset margin-left on the text-content on small screens */
     #main .work-item .text-content {
@@ -214,11 +243,37 @@ footer#footer .inner {
 }
 </style>
 
+<style>
+/* ⬆️ FONT SIZE FIX: Increase paragraph text size in the main content area */
+/* This targets all paragraphs within the #main content area, including your research descriptions */
+#main p {
+    font-size: 1.1em !important;
+}
+
+/* FIX: Remove grayish overlay from research images */
+#main .work-item .image:before {
+    display: none !important;
+}
+
+#main .work-item .image.fit.thumb:before {
+    display: none !important;
+}
+
+#main .work-item .image {
+    background: none !important;
+}
+
+#main .work-item .image img {
+    opacity: 1 !important;
+    filter: none !important;
+}
+</style>
+
     <body class="is-preload">
 
        <header id="header">
              <div class="inner">
-                <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
+                <a href="#" class="image avatar"><img src="images/kamil-dreczkowski.png" alt="" /></a>
            <h1><strong>Kamil Dreczkowski</strong></h1>
              <br>
              <nav>
@@ -236,13 +291,12 @@ footer#footer .inner {
      <section id="robot-learning">
          <h2>Robot Learning</h2>
          <div class="row">
-         <p>Robot </p>
 
              <article class="col-12 work-item">
                  <div class="image fit thumb"><img src="images/Adapting.gif" alt="" /></div>
 
                  <div class="text-content">
-                     <h3><a href="https://www.robot-learning.uk/adapting-skills" target="_blank">Adapting Skills to Novel Grasps: A Self-Supervised Approach</a></h3>
+                     <h2><a href="https://www.robot-learning.uk/adapting-skills" target="_blank">Adapting Skills to Novel Grasps: A Self-Supervised Approach</a></h2>
                      <p>If a robot learns a skills with a grasped object (e.g. a tool), then that skill will usually fail if the robot grasps the object in a different way to when it learned the skill. In this work, we introduce a self-supervised data collection method, which enables a robot to adapt a skill to a novel grasp even though the skill was learned using a different grasp.</p>
                  </div>
              </article>
@@ -251,7 +305,7 @@ footer#footer .inner {
                  <div class="image fit thumb"><img src="images/one-shot.gif" alt="" /></div>
 
                  <div class="text-content">
-                     <h3><a href="https://www.robot-learning.uk/pose-estimation-perspective" target="_blank">One-Shot Imitation Learning: A Pose Estimation Perspective</a></h3>
+                     <h2><a href="https://www.robot-learning.uk/pose-estimation-perspective" target="_blank">One-Shot Imitation Learning: A Pose Estimation Perspective</a></h2>
                      <p>Studied a novel combination of trajectory transfer and unseen object pose estimation, which enables new tasks to be learned from just a single demonstration, without requiring any further data collection or training. Under this formulation, experiments provide a deep dive into the effects of pose estimation errors and camera calibration errors on task success rates.</p>
                  </div>
              </article>
@@ -260,12 +314,11 @@ footer#footer .inner {
       <section id="Computer-vision">
            <h2>Computer Vision for Robotics</h2>
            <div class="row">
-               <p>Computer</p>
              <article class="col-12 work-item">
                  <div class="image fit thumb"><img src="images/eye-in-hand.gif" alt="" /></div>
 
                  <div class="text-content">
-                     <h3><a href="https://www.robot-learning.uk/learning-eye-in-hand-calibration" target="_blank">Learning Eye-in-Hand Camera Calibration from a Single Image</a></h3>
+                     <h2><a href="https://www.robot-learning.uk/learning-eye-in-hand-calibration" target="_blank">Learning Eye-in-Hand Camera Calibration from a Single Image</a></h2>
                      <p>Studied a range of different learning-based methods for extrinsic calibration of a wrist-mounted RGB camera, when given only a single RGB image from that camera. We found that a simple direct regression of calibration parameters performed the best, and also outperformed classical calibration methods based on markers.</p>
                  </div>
              </article>
@@ -274,7 +327,7 @@ footer#footer .inner {
                  <div class="image fit thumb"><img src="images/Hybrid-ICP.avif" alt="" /></div>
 
                  <div class="text-content">
-                     <h3><a href="https://www.robot-learning.uk/hybrid-icp" target="_blank">Hybrid ICP</a></h3>
+                     <h2><a href="https://www.robot-learning.uk/hybrid-icp" target="_blank">Hybrid ICP</a></h2>
                     <p> ICP algorithms typically involve a fixed choice of data association method and a fixed choice of error metric. In this paper, we propose a novel and flexible ICP variant, which dynamically optimises both the data association method and error metric based on the live image of an object and the current ICP estimate.</p>
                  </div>
              </article>
@@ -283,21 +336,20 @@ footer#footer .inner {
       <section id="Combinatorial Bayesian Optimisation">
             <h2>Combinatorial Bayesian Optimisation</h2>
             <div class="row">
-                <p>Bayesian</p>
              <article class="col-12 work-item">
                  <div class="image fit thumb"><img src="images/MCBO.png" alt="" /></div>
 
                  <div class="text-content">
-                     <h3><a href="https://arxiv.org/abs/2306.09803" target="_blank">Framework and Benchmarks for Combinatorial and Mixed-variable Bayesian Optimization</a></h3>
+                     <h2><a href="https://arxiv.org/abs/2306.09803" target="_blank">Framework and Benchmarks for Combinatorial and Mixed-variable Bayesian Optimization</a></h2>
                      <p>We introduce a modular framework for Mixed-variable and Combinatorial Bayesian Optimization (MCBO) that addresses the field's lack of systematic benchmarking. The framework enables effortless combination of Bayesian Optimization components and provides diverse benchmarking tasks. We implemented 47 novel MCBO algorithms and benchmarked them against 12 existing solvers across ten tasks in over 4000 experiments. Results reveal a superior combination of MCBO primitives that outperforms existing approaches and demonstrate the importance of model fit and trust regions.</p>
                  </div>
              </article>
 
              <article class="col-12 work-item">
-                 <div class="image fit thumb"><img src="images/antibody.jpg" alt="" /></div>
+                 <div class="image fit thumb"><img src="images/Antibody.png" alt="" /></div>
 
                  <div class="text-content">
-                     <h3><a href="https://www.sciencedirect.com/science/article/pii/S2667237522002764" target="_blank">Toward real-world automated antibody design with combinatorial Bayesian optimization</a></h3>
+                     <h2><a href="https://www.sciencedirect.com/science/article/pii/S2667237522002764" target="_blank">Toward real-world automated antibody design with combinatorial Bayesian optimization</a></h2>
                     <p>Designing therapeutic antibodies requires optimizing both antigen-binding affinity and developability properties. We frame this as a combinatorial search problem where a black-box oracle simulates binding affinity from antibody-antigen sequence pairs. Since the vast antibody sequence space prevents exhaustive search both computationally and experimentally, we need efficient mechanisms to find optimal antibody sequences that maximize binding affinity while maintaining favorable biophysical properties.</p>
                  </div>
              </article>
@@ -313,7 +365,7 @@ footer#footer .inner {
          <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
       </ul>
       <ul class="copyright">
-         <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
+          <li>kamil-dreczkowski@outlook.com</a></li>
       </ul>
    </div>
 </footer>

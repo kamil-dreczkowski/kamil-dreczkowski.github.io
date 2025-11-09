@@ -1,120 +1,188 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Kamil Dreczkowski | Researcher & Engineer</title>
+    <title>Kamil Dreczkowski</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
     <style>
-    /* ------------------------------------------------------------------- */
-    /* 1. LAYOUT AND SCROLL TRANSITION FIX (CRITICAL) */
-    /* --- AMENDED: FOCUS ON RIGHT SIDE AND NO SCROLL --- */
+    /*
+    *** START CUSTOM STYLES ***
+    */
 
-    /* CRITICAL: Disables scrolling on the entire page */
+    /* --- 1. COLOR CONSISTENCY FIX: Dark Sidebar/Footer (#191919) --- */
+    header#header, footer#footer, footer#footer .inner {
+        background: #191919 !important;
+        background-color: #191919 !important;
+    }
+
+    /* --- 2. AGGRESSIVE OVERRIDE FOR FULL IMAGE COVERAGE --- */
+    /* Override any default main.css styles */
     body {
-        overflow: hidden !important;
-        background-color: #000000 !important;
-        background-image: image/robot1.jpg !important;
-    }
-
-    /* Fixed Background Element (Placed outside the main content flow) */
-    #fixed-hero-background {
-        position: fixed; /* CRITICAL: Makes it stay put */
-        top: 0;
-        /* Kept original value to start exactly where the sidebar ends */
-        left: 18.8em;
-        width: calc(100% - 20em); /* Fill the rest of the viewport */
-        height: 100vh;
-        z-index: 0;
-
-        /* Image styles */
-        background-image: url('images/Robot1.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    /* CRITICAL: Hide placeholder and content sections to prevent overlay and scroll */
-    #content-placeholder,
-    #one, #two, #three {
-        display: none !important;
-        height: 0 !important;
+        margin: 0 !important;
         padding: 0 !important;
-        background-color: transparent !important;
+        overflow-x: hidden !important;
     }
 
-
-    /* Ensure #main is set up to be transparent and non-scrollable on the right side */
+    /* Desktop layout - fill entire right side */
     @media screen and (min-width: 981px) {
         #main {
-            /* Keep original positioning for the right side */
-            margin-left: 20em;
-            width: calc(100% - 20em);
-            padding-top: 0 !important;
-
-            /* CRITICAL: Remove scrolling */
+            position: fixed !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            left: 21% !important; /* Start at sidebar edge */
+            right: 0 !important; /* Extend to viewport edge */
+            width: 79% !important; /* Force 79% width */
+            height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: none !important; /* Override any max-width */
             overflow: hidden !important;
+        }
 
-            /* CRITICAL: Force transparent background so the image shows */
-            background-color: transparent !important;
-
-            /* Ensure it fills the height of the viewport */
-            height: 100vh;
-            position: relative;
+        /* Ensure body and html don't add margins */
+        html, body {
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
     }
 
-    /* ------------------------------------------------------------------- */
-    /* 3. MENU AND FOOTER STYLES (NO CHANGES HERE - Standard Strata Sidebar) */
-    /* ------------------------------------------------------------------- */
-    #header nav ul { list-style: none; padding-left: 0; margin: 0; text-align: left; }
-    #header nav ul li { margin-bottom: 0.8em; }
-    #header nav ul li a { display: block; text-align: left; }
-    #header nav ul li a i { margin-right: 10px; width: 20px; text-align: center; }
-    #header .inner .image.avatar { display: block; margin-left: auto; margin-right: auto; text-align: center; }
-    #footer .inner ul.icons li { padding: 0 0.3em; margin: 0; }
-    #footer .inner ul.icons li a { width: 2.0em; height: 2.0em; font-size: 0.9em; line-height: 2.0em; }
-    #footer .inner ul.copyright { padding-top: 0.5em; font-size: 0.8em; }
-
-
-    /* ------------------------------------------------------------------- */
-    /* 4. BACKGROUND COLOR CONSISTENCY FIXES (APPLY TO LEFT BAR ELEMENTS) */
-    /* ------------------------------------------------------------------- */
-
-    /* NEW FIX: Aggressively enforce dark background on the fixed sidebar (header) */
-    header#header {
-        background: #191919 !important;
-        background-color: #191919 !important;
-        color: #ffffff !important;
+    /* --- 3. SIDEBAR NAVIGATION TWEAKS --- */
+    #header nav ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        text-align: left;
+    }
+    #header nav ul li {
+        margin-bottom: 0.8em;
+    }
+    #header nav ul li a {
+        display: block;
+        text-align: left;
+    }
+    #header nav ul li a i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
     }
 
+    /* --- 4. AVATAR CENTERING TWEAK --- */
+    #header .inner .image.avatar {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
 
-    /* FOOTER RESTORATION FIX - Target the footer that is *outside* the main content flow */
-    /* If your template places the footer/icons at the bottom of the fixed sidebar,
-       we ensure it uses the dark color and remains visible. */
-    footer#footer {
-        /* Critical: Keep the standard sidebar background */
-        background: #191919 !important;
-        background-color: #191919 !important;
-        color: #ffffff !important;
+    /* Add left alignment for the name heading */
+    #header .inner h1 {
+        text-align: left;
+    }
 
-        /* Ensure the footer is NOT hidden (undoing previous error) */
+    /* --- 5. FOOTER ICON SIZING FIX --- */
+    #footer .inner ul.icons {
+        text-align: left;
+    }
+
+    #footer .inner ul.icons li {
+        padding: 0 0.3em;
+        margin: 0;
+    }
+
+    #footer .inner ul.icons li a {
+        width: 2.0em;
+        height: 2.0em;
+        font-size: 0.9em;
+        line-height: 2.0em;
+    }
+
+    #footer .inner ul.copyright {
+        padding-top: 0.5em;
+        font-size: 0.8em;
+        text-align: left;
+    }
+
+    /* --- 6. HERO IMAGE SECTION - FULL COVERAGE --- */
+    #main section.hero-image-section,
+    #main section#one {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        overflow: hidden !important;
+    }
+
+    /* --- 7. IMAGE STYLES - AGGRESSIVE FULL COVERAGE --- */
+    #main img.main-hero-image,
+    #main section img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        object-fit: cover !important;
         display: block !important;
-
-        position: relative;
-        z-index: 5;
-        margin-top: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
     }
 
-    /* Target the inner container of the footer */
-    footer#footer .inner {
-        background: #191919 !important;
-        background-color: #191919 !important;
-        color: #ffffff !important;
+    /* Remove any section borders or margins that might be inherited */
+    #main > section {
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
+    /* *** START: CORRECTED MOBILE STYLES ***
+    */
+    @media screen and (max-width: 980px) {
+        #main {
+            position: relative !important;
+            left: auto !important;
+            right: auto !important;
+            top: auto !important;
+            bottom: auto !important;
+            margin: 0 !important;
+            width: 100% !important;
+            padding: 0 !important;
+            height: auto !important;
+            max-width: 100% !important;
+        }
+
+        /* --- UPDATED FOR SPECIFICITY --- */
+        /* Use the ID selector #one to win the specificity battle */
+        #main section#one {
+            position: relative !important;
+            height: 60vh !important; /* This sets the height for mobile */
+            width: 100% !important;
+            overflow: hidden; /* Good practice */
+        }
+
+        /* --- UPDATED FOR CONSISTENCY --- */
+        /* This image should fill its parent (section#one) */
+        #main section#one img.main-hero-image {
+            position: relative !important;
+            height: 100% !important; /* Fills the 60vh parent */
+            width: 100% !important;
+            object-fit: cover !important; /* Re-add object-fit */
+        }
+    }
+    /* *** END: CORRECTED MOBILE STYLES ***
+    */
     </style>
 </head>
 
@@ -122,7 +190,7 @@
 
     <header id="header">
         <div class="inner">
-            <a href="#" class="image avatar"><img src="images/kamil-profile.png" alt="" /></a>
+            <a href="#" class="image avatar"><img src="images/kamil-dreczkowski.png" alt="Kamil Dreczkowski" /></a>
             <h1><strong>Kamil Dreczkowski</strong></h1>
             <br>
             <nav>
@@ -146,24 +214,16 @@
                 <li><a href="https://x.com/Kamil__Dre" target="_blank" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
             </ul>
             <ul class="copyright">
-                <li>Kamil Dreczkowski</li><li>kamil-dreczkowski@outlook.com</a></li>
+                <li>kamil-dreczkowski@outlook.com</li>
             </ul>
         </div>
     </footer>
 
-
-    <div id="fixed-hero-background"></div>
-
     <div id="main">
-        <section id="content-placeholder"></section>
-        <section id="one" class="dark-section">
-            <div class="inner">
-                <h2>Welcome</h2>
-                <p>Content is hidden.</p>
-                </div>
+        <section id="one" class="hero-image-section">
+            <img src="images/kamil-dreczkowski-dishwasher.jpg" alt="Kamil Dreczkowski teaching a robot how to iron a shirt." class="main-hero-image">
         </section>
-
-        </div>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
