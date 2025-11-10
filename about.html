@@ -112,7 +112,7 @@ footer#footer .inner {
 </style>
 
 <style>
-/* 🚀 STYLES FOR #About-me-content: JUSTIFIED TEXT (EXCEPT LAST LINE) AND IMAGE WRAP */
+/* 🚀 UPDATED STYLES FOR #About-me-content: TEXT WRAPPING ON MOBILE */
 
 /* Container styles for float clearing */
 #About-me-content {
@@ -182,7 +182,7 @@ footer#footer .inner {
 
 /* *** TEXT JUSTIFICATION MATCHING HOBBIES PAGE *** */
 #About-me-content p {
-    margin: 0 !important;
+    margin: 0 0 1em 0 !important;
     /* 1. Justify all lines */
     text-align: justify !important;
 
@@ -204,22 +204,42 @@ footer#footer .inner {
     clear: both;
 }
 
-/* Responsive adjustment for small screens */
-@media screen and (max-width: 736px) {
-    #About-me-content .image.left,
-    #About-me-content .image.right {
-        float: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 100% !important;
-        margin: 0 0 1em 0 !important;
+/* UPDATED: Responsive adjustment - KEEP TEXT WRAPPING AND JUSTIFICATION ON MOBILE */
+@media screen and (max-width: 980px) {
+    /* Reduce image width on mobile but keep wrapping */
+    #About-me-content .image.left {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+        margin: 0 1em 1em 0 !important;
     }
 
+    #About-me-content .image.right {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+        margin: 0 0 1em 1em !important;
+    }
+
+    /* Keep text justified on mobile */
     #About-me-content p {
-        /* Keep left alignment on small screens */
-        text-align: left !important;
-        text-align-last: auto !important;
-        -moz-text-align-last: auto !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+
+    /* Additional specificity for span elements on mobile */
+    #About-me-content span.image.left,
+    #About-me-content p span.image.left {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+    }
+
+    #About-me-content span.image.right,
+    #About-me-content p span.image.right {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
     }
 }
 </style>
@@ -244,6 +264,22 @@ html body div#main section#About-me-content span.image.right {
 
 #main #About-me-content span.image[class*="right"] {
     width: 55% !important;
+}
+
+/* Mobile override for 45% width */
+@media screen and (max-width: 980px) {
+    body #main #About-me-content span.image.left,
+    body #main #About-me-content span.image.right,
+    body #main #About-me-content p span.image.left,
+    body #main #About-me-content p span.image.right,
+    html body div#main section#About-me-content span.image.left,
+    html body div#main section#About-me-content span.image.right,
+    #main #About-me-content span.image[class*="left"],
+    #main #About-me-content span.image[class*="right"] {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+    }
 }
 </style>
 

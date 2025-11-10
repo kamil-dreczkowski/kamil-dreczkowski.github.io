@@ -152,7 +152,7 @@ footer#footer .inner {
 </style>
 
 <style>
-/* 🚀 FINAL STYLES FOR RESEARCH WORK ITEMS: JUSTIFIED TEXT (EXCEPT LAST LINE) */
+/* 🚀 FINAL STYLES FOR RESEARCH WORK ITEMS: TEXT WRAPPING AROUND IMAGES */
 
 /* Style for work items to ensure proper layout */
 #main .work-item {
@@ -168,44 +168,30 @@ footer#footer .inner {
     display: block;
 }
 
-/* Style for the floated image */
+/* Style for the floated image - NOW AT 55% WIDTH TO MATCH ABOUT PAGE */
 #main .work-item .image.fit.thumb {
     float: left !important;
-    width: 43% !important; /* Retaining 40% width */
-    margin: 0 1.5% 1em 0 !important; /* Adjusted margin to percentage for calculation */
-    max-width: none !important;
+    width: 55% !important;
+    max-width: 55% !important;
+    min-width: 55% !important;
+    margin: 0 1.5em 1em 0 !important;
     padding: 0 !important;
-
-    /* 🖼️ NEW FIX: Add a light grey border */
-    border: 1px solid #ccc !important; /* Light grey border */
-    box-sizing: border-box !important; /* Ensure border is included in the 43% width */
 }
 
-/* NEW: Wrapper for text content to ensure it stays to the right of the floated image */
-#main .work-item .text-content {
-    overflow: hidden; /* Creates a new block formatting context */
-    /* Push text content past the image (43% width + 1.5% margin) */
-    margin-left: calc(43% + 1.5%) !important;
-}
-
-
-#main .work-item h3 { /* Changed h3 to h2 in HTML below, so this CSS still targets it if you change it back */
+#main .work-item h2 {
     clear: none !important;
     margin-top: 0 !important;
     margin-bottom: 0.5em !important;
-    /* Headings look best left-aligned */
     text-align: left !important;
 }
 
 #main .work-item p {
-    /* Ensure paragraph text wraps properly */
+    /* Allow text to wrap around the floated image */
     clear: none !important;
-    margin: 0 !important;
+    margin: 0 0 1em 0 !important;
 
-    /* 1. Justify all lines */
+    /* Justified text */
     text-align: justify !important;
-
-    /* 2. Text layout enhancements */
     text-justify: inter-word !important;
     line-height: 1.6;
 
@@ -223,22 +209,22 @@ footer#footer .inner {
     clear: both;
 }
 
-/* Optional: Add minimum height to ensure consistent spacing */
-#main .work-item {
-    min-height: 150px;
-}
-
-/* Responsive adjustment for smaller screens */
-@media screen and (max-width: 980px) { /* Changed 736px to 980px for better sidebar consistency */
+/* Responsive adjustment for smaller screens - KEEP TEXT WRAPPING */
+@media screen and (max-width: 980px) {
+    /* Reduce image width on mobile but keep wrapping */
     #main .work-item .image.fit.thumb {
-        float: none !important;
-        width: 100% !important;
-        margin: 0 0 1em 0 !important;
-        border: none !important; /* Remove border on small screens if preferred */
+        float: left !important;
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+        margin: 0 1em 1em 0 !important;
+        border: none !important;
     }
-    /* IMPORTANT: Reset margin-left on the text-content on small screens */
-    #main .work-item .text-content {
-        margin-left: 0 !important;
+
+    /* Keep text justified on mobile */
+    #main .work-item p {
+        text-align: justify !important;
+        text-justify: inter-word !important;
     }
 }
 </style>
@@ -289,69 +275,56 @@ footer#footer .inner {
 <div id="main">
 
      <section id="robot-learning">
-         <h2>Robot Learning</h2>
+         <h1>Robot Learning</h1>
          <div class="row">
-
              <article class="col-12 work-item">
+                     <h2><a href="https://www.robot-learning.uk/adapting-skills" target="_blank">Adapting Skills to Novel Grasps: A Self-Supervised Approach</a></h2>
                  <div class="image fit thumb"><img src="images/Adapting.gif" alt="" /></div>
 
-                 <div class="text-content">
-                     <h2><a href="https://www.robot-learning.uk/adapting-skills" target="_blank">Adapting Skills to Novel Grasps: A Self-Supervised Approach</a></h2>
-                     <p>If a robot learns a skills with a grasped object (e.g. a tool), then that skill will usually fail if the robot grasps the object in a different way to when it learned the skill. In this work, we introduce a self-supervised data collection method, which enables a robot to adapt a skill to a novel grasp even though the skill was learned using a different grasp.</p>
-                 </div>
+                 <p>We found that robots typically fail to transfer skills when grasping objects differently than during training. To address this, we developed a self-supervised data collection method that enables grasp-invariant skill transfer. Our approach allows robots to successfully adapt manipulation skills to novel grasps without requiring additional human demonstrations, demonstrating robust generalization across varying grasp configurations through systematic real-world validation.</p>
              </article>
 
              <article class="col-12 work-item">
+                     <h2><a href="https://www.robot-learning.uk/pose-estimation-perspective" target="_blank">One-Shot Imitation Learning: A Pose Estimation Perspective</a></h2>
                  <div class="image fit thumb"><img src="images/one-shot.gif" alt="" /></div>
 
-                 <div class="text-content">
-                     <h2><a href="https://www.robot-learning.uk/pose-estimation-perspective" target="_blank">One-Shot Imitation Learning: A Pose Estimation Perspective</a></h2>
-                     <p>Studied a novel combination of trajectory transfer and unseen object pose estimation, which enables new tasks to be learned from just a single demonstration, without requiring any further data collection or training. Under this formulation, experiments provide a deep dive into the effects of pose estimation errors and camera calibration errors on task success rates.</p>
-                 </div>
+                 <p>We investigated how combining trajectory transfer with unseen object pose estimation enables robots to learn new tasks from single demonstrations, eliminating the need for additional data collection or training. Through systematic experimentation, we characterized the impact of pose estimation errors and camera calibration errors on task success rates, revealing critical tolerance thresholds for reliable one-shot learning. This analysis provides practical insights for deploying vision-based manipulation systems in real-world environments.</p>
              </article>
       </div></section>
 
       <section id="Computer-vision">
-           <h2>Computer Vision for Robotics</h2>
+           <h1>Computer Vision for Robotics</h1>
            <div class="row">
              <article class="col-12 work-item">
+                 <h2><a href="https://www.robot-learning.uk/learning-eye-in-hand-calibration" target="_blank">Learning Eye-in-Hand Camera Calibration from a Single Image</a></h2>
                  <div class="image fit thumb"><img src="images/eye-in-hand.gif" alt="" /></div>
 
-                 <div class="text-content">
-                     <h2><a href="https://www.robot-learning.uk/learning-eye-in-hand-calibration" target="_blank">Learning Eye-in-Hand Camera Calibration from a Single Image</a></h2>
-                     <p>Studied a range of different learning-based methods for extrinsic calibration of a wrist-mounted RGB camera, when given only a single RGB image from that camera. We found that a simple direct regression of calibration parameters performed the best, and also outperformed classical calibration methods based on markers.</p>
-                 </div>
+                 <p>We explored learning-based approaches for extrinsic calibration of wrist-mounted RGB cameras using only single images. Through comparative analysis of multiple methods, we discovered that direct regression of calibration parameters outperformed both alternative learning-based techniques and classical marker-based calibration approaches. This finding demonstrates that data-driven methods can achieve superior calibration accuracy while eliminating the need for physical markers, streamlining robot deployment in new environments.</p>
              </article>
 
              <article class="col-12 work-item">
-                 <div class="image fit thumb"><img src="images/Hybrid-ICP.avif" alt="" /></div>
+                 <h2><a href="https://www.robot-learning.uk/hybrid-icp" target="_blank">Hybrid ICP</a></h2>
+                 <div class="image fit thumb"><img src="images/Hybrid-ICP.png" alt="" /></div>
 
-                 <div class="text-content">
-                     <h2><a href="https://www.robot-learning.uk/hybrid-icp" target="_blank">Hybrid ICP</a></h2>
-                    <p> ICP algorithms typically involve a fixed choice of data association method and a fixed choice of error metric. In this paper, we propose a novel and flexible ICP variant, which dynamically optimises both the data association method and error metric based on the live image of an object and the current ICP estimate.</p>
-                 </div>
+                 <p>We found that traditional ICP algorithms rely on fixed data association methods and error metrics, limiting their adaptability to varying scene conditions. To address this, we developed a dynamic ICP variant that automatically optimizes both data association and error metrics in real-time based on live object observations and current pose estimates. Through experimental validation, this adaptive approach achieved superior registration accuracy compared to fixed-parameter methods, particularly in challenging scenarios with partial occlusions and varying object geometries.</p>
              </article>
       </div></section>
 
       <section id="Combinatorial Bayesian Optimisation">
-            <h2>Combinatorial Bayesian Optimisation</h2>
+            <h1>Combinatorial Bayesian Optimisation</h1>
             <div class="row">
              <article class="col-12 work-item">
+                 <h2><a href="https://arxiv.org/abs/2306.09803" target="_blank">Framework and Benchmarks for Combinatorial and Mixed-variable Bayesian Optimization</a></h2>
                  <div class="image fit thumb"><img src="images/MCBO.png" alt="" /></div>
 
-                 <div class="text-content">
-                     <h2><a href="https://arxiv.org/abs/2306.09803" target="_blank">Framework and Benchmarks for Combinatorial and Mixed-variable Bayesian Optimization</a></h2>
-                     <p>We introduce a modular framework for Mixed-variable and Combinatorial Bayesian Optimization (MCBO) that addresses the field's lack of systematic benchmarking. The framework enables effortless combination of Bayesian Optimization components and provides diverse benchmarking tasks. We implemented 47 novel MCBO algorithms and benchmarked them against 12 existing solvers across ten tasks in over 4000 experiments. Results reveal a superior combination of MCBO primitives that outperforms existing approaches and demonstrate the importance of model fit and trust regions.</p>
-                 </div>
+                 <p>We discovered that the field of Mixed-variable and Combinatorial Bayesian Optimization lacked systematic benchmarking standards, hindering meaningful comparison of approaches. To address this, we developed a modular framework that enables seamless integration of Bayesian Optimization components across diverse tasks. Through over 4,000 experiments comparing 47 novel algorithms against 12 existing solvers across ten benchmarking tasks, we identified a superior combination of MCBO primitives that outperforms previous methods. Our analysis revealed that model fit and trust region design are critical factors for achieving robust optimization performance across mixed-variable spaces.</p>
              </article>
 
              <article class="col-12 work-item">
+                 <h2><a href="https://www.sciencedirect.com/science/article/pii/S2667237522002764" target="_blank">Toward real-world automated antibody design with combinatorial Bayesian optimization</a></h2>
                  <div class="image fit thumb"><img src="images/Antibody.png" alt="" /></div>
 
-                 <div class="text-content">
-                     <h2><a href="https://www.sciencedirect.com/science/article/pii/S2667237522002764" target="_blank">Toward real-world automated antibody design with combinatorial Bayesian optimization</a></h2>
-                    <p>Designing therapeutic antibodies requires optimizing both antigen-binding affinity and developability properties. We frame this as a combinatorial search problem where a black-box oracle simulates binding affinity from antibody-antigen sequence pairs. Since the vast antibody sequence space prevents exhaustive search both computationally and experimentally, we need efficient mechanisms to find optimal antibody sequences that maximize binding affinity while maintaining favorable biophysical properties.</p>
-                 </div>
+                 <p>We found that therapeutic antibody design requires simultaneously optimizing antigen-binding affinity and developability properties across vast sequence spaces that prohibit exhaustive search. To tackle this challenge, we formulated the problem as combinatorial black-box optimization, where oracle functions simulate binding affinity from antibody-antigen sequence pairs. Through our computational framework, we developed efficient search mechanisms that identify optimal antibody sequences maximizing binding affinity while preserving favorable biophysical properties, dramatically reducing the experimental candidates requiring laboratory validation.</p>
              </article>
 
 

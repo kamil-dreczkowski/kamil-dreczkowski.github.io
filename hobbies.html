@@ -110,7 +110,7 @@ footer#footer .inner {
 }
 </style>
 <style>
-/* 🚀 UPDATED STYLES: JUSTIFIED TEXT (EXCEPT LAST LINE) AND ORIGINAL IMAGE SIZE */
+/* 🚀 UPDATED STYLES: JUSTIFIED TEXT ON MOBILE AND ORIGINAL IMAGE SIZE */
 
 /* Style for the general content wrapper */
 #hobbies-content .hobby-article {
@@ -173,14 +173,13 @@ footer#footer .inner {
     text-align: left;
 }
 
-/* *** FIX HERE: Last line is now LEFT-ALIGNED for neatness *** */
+/* *** Justified text at all screen sizes *** */
 #hobbies-content p {
-    margin: 0 !important;
+    margin: 0 0 1em 0 !important;
     /* 1. Justify all lines */
     text-align: justify !important;
 
-    /* 2. REMOVED: text-align-last: justify;
-          The last line will now align left by default, looking cleaner. */
+    /* 2. Last line aligns left by default for cleaner appearance */
 
     text-justify: inter-word !important;
     line-height: 1.6;
@@ -197,19 +196,46 @@ footer#footer .inner {
     clear: both;
 }
 
-@media screen and (max-width: 736px) {
+/* UPDATED: Mobile view with text wrapping and justified text */
+@media screen and (max-width: 980px) {
+    /* Reduce image width on mobile but keep wrapping */
     #hobbies-content .image.left,
-    #hobbies-content .image.right {
-        float: none !important;
-        width: 100% !important;
-        margin: 0 0 1em 0 !important;
+    #hobbies-content .hobby-article .image.left,
+    #hobbies-content section .image.left,
+    #main #hobbies-content .image.left {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+        margin: 0 1em 1em 0 !important;
     }
 
+    #hobbies-content .image.right,
+    #hobbies-content .hobby-article .image.right,
+    #hobbies-content section .image.right,
+    #main #hobbies-content .image.right {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+        margin: 0 0 1em 1em !important;
+    }
+
+    /* UPDATED: Keep text justified on mobile */
     #hobbies-content p {
-        /* Keep left alignment on small screens */
-        text-align: left !important;
-        text-align-last: auto !important;
-        -moz-text-align-last: auto !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+
+    /* Additional specificity for span elements on mobile */
+    #hobbies-content span.image.left {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+    }
+
+    #hobbies-content span.image.right {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
     }
 }
 </style>
@@ -232,6 +258,20 @@ html body div#main section#hobbies-content section.hobby-article span.image.righ
 
 #main span.image[class*="right"] {
     width: 55% !important;
+}
+
+/* Mobile override for 45% width */
+@media screen and (max-width: 980px) {
+    body #main #hobbies-content span.image.left,
+    body #main #hobbies-content span.image.right,
+    html body div#main section#hobbies-content section.hobby-article span.image.left,
+    html body div#main section#hobbies-content section.hobby-article span.image.right,
+    #main span.image[class*="left"],
+    #main span.image[class*="right"] {
+        width: 45% !important;
+        max-width: 45% !important;
+        min-width: 45% !important;
+    }
 }
 </style>
 
@@ -279,7 +319,7 @@ html body div#main section#hobbies-content section.hobby-article span.image.righ
             <h3>Seeking Adrenaline</h3>
             <span class="image left"><img src="images/skydive.jpg" alt="Image related to Hobby Three" /></span>
             <p>
-                I thrive on pushing my boundaries through extreme sports that test both courage and composure. Whether free-falling through the sky while skydiving, taking the leap off a bungee platform, or coming face-to-face with sharks during a cage diving experience, these adrenaline-fueled experiences remind me that life's most rewarding moments often lie just beyond our comfort zone. Each challenge conquered reinforces my belief that fear is simply an invitation to grow stronger and more confident.
+                I've always been drawn to activities that get my heart racing and push me outside my comfort zone. From skydiving and bungee jumping to cage diving with sharks, these adrenaline-pumping experiences have taught me something valuable: the most memorable moments in life usually happen when you take the leap despite the fear. Each time I've conquered one of these challenges, I've walked away feeling a bit braver and more confident, carrying that mindset into other areas of my life. There's something incredibly rewarding about facing down your fears and coming out the other side stronger for it.
             </p>
         </section>
 
@@ -294,7 +334,7 @@ html body div#main section#hobbies-content section.hobby-article span.image.righ
             <h3>Board Games</h3>
             <span class="image left"><img src="images/Boardgames.jpg" alt="Image related to Hobby Five" /></span>
             <p>
-            In quieter moments away from physical pursuits, I find deep satisfaction in the strategic world of board games, particularly cooperative experiences that challenge players to work together against the game itself. Games like Journeys in Middle-earth and Gloomhaven have captured my imagination with their intricate mechanics and immersive storytelling, offering adventures that unfold over countless hours of tactical decision-making and collaborative problem-solving. There's something uniquely rewarding about gathering around a table with friends, diving into complex scenarios where every choice matters, and celebrating shared victories earned through careful planning and teamwork. These games provide a different kind of thrill—one that exercises the mind rather than the body, yet delivers the same sense of accomplishment when overcoming seemingly impossible challenges together.            </p>
+                In quieter moments away from physical pursuits, I enjoy the strategic depth of cooperative board games, particularly titles like Journeys in Middle-earth and Gloomhaven. These games offer complex mechanics and immersive narratives that unfold over extended play sessions, requiring careful tactical planning and collaborative problem-solving. What I find most engaging is the team-based approach, where players must coordinate strategies and make critical decisions together to overcome challenging scenarios. Working through these intricate game systems with friends provides a satisfying mental exercise and reinforces the value of effective collaboration—skills that translate well beyond the gaming table.
     </section>
 </div>
 
