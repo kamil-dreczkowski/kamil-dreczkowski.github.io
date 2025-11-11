@@ -185,6 +185,66 @@
     /* *** END: CORRECTED MOBILE STYLES ***
     */
     </style>
+
+    <style>
+    /* 📱 MOBILE HEADER HEIGHT REDUCTION */
+    @media screen and (max-width: 980px) {
+        /* Reduce overall header padding */
+        #header {
+            padding: 1em 1.5em !important;
+        }
+
+        #header .inner {
+            padding: 0 !important;
+        }
+
+        /* Make avatar image smaller */
+        #header .image.avatar {
+            margin-bottom: 0.5em !important;
+        }
+
+        #header .image.avatar img {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        /* Reduce spacing around name */
+        #header .inner h1 {
+            margin: 0.3em 0 0.5em 0 !important;
+            font-size: 1.2em !important;
+        }
+
+        /* Remove the extra <br> spacing */
+        #header .inner h1 + br {
+            display: none !important;
+        }
+
+        /* Reduce spacing between navigation items */
+        #header nav {
+            margin-top: 0.5em !important;
+        }
+
+        #header nav ul {
+            margin: 0 !important;
+        }
+
+        #header nav ul li {
+            margin-bottom: 0.3em !important;
+        }
+
+        /* Make navigation links more compact */
+        #header nav ul li a {
+            padding: 0.2em 0 !important;
+            font-size: 0.9em !important;
+            line-height: 1.4 !important;
+        }
+
+        #header nav ul li a i {
+            margin-right: 8px !important;
+            width: 18px !important;
+        }
+    }
+    </style>
 </head>
 
 <body class="is-preload">

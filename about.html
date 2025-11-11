@@ -206,18 +206,18 @@ footer#footer .inner {
 
 /* UPDATED: Responsive adjustment - KEEP TEXT WRAPPING AND JUSTIFICATION ON MOBILE */
 @media screen and (max-width: 980px) {
-    /* Reduce image width on mobile but keep wrapping */
+    /* Increase image width on mobile but keep wrapping */
     #About-me-content .image.left {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
         margin: 0 1em 1em 0 !important;
     }
 
     #About-me-content .image.right {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
         margin: 0 0 1em 1em !important;
     }
 
@@ -230,16 +230,16 @@ footer#footer .inner {
     /* Additional specificity for span elements on mobile */
     #About-me-content span.image.left,
     #About-me-content p span.image.left {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
     }
 
     #About-me-content span.image.right,
     #About-me-content p span.image.right {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
     }
 }
 </style>
@@ -266,7 +266,7 @@ html body div#main section#About-me-content span.image.right {
     width: 55% !important;
 }
 
-/* Mobile override for 45% width */
+/* Mobile override for 60% width */
 @media screen and (max-width: 980px) {
     body #main #About-me-content span.image.left,
     body #main #About-me-content span.image.right,
@@ -276,9 +276,69 @@ html body div#main section#About-me-content span.image.right {
     html body div#main section#About-me-content span.image.right,
     #main #About-me-content span.image[class*="left"],
     #main #About-me-content span.image[class*="right"] {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
+    }
+}
+</style>
+
+<style>
+/* 📱 MOBILE HEADER HEIGHT REDUCTION */
+@media screen and (max-width: 980px) {
+    /* Reduce overall header padding */
+    #header {
+        padding: 1em 1.5em !important;
+    }
+
+    #header .inner {
+        padding: 0 !important;
+    }
+
+    /* Make avatar image smaller */
+    #header .image.avatar {
+        margin-bottom: 0.5em !important;
+    }
+
+    #header .image.avatar img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    /* Reduce spacing around name */
+    #header .inner h1 {
+        margin: 0.3em 0 0.5em 0 !important;
+        font-size: 1.2em !important;
+    }
+
+    /* Remove the extra <br> spacing */
+    #header .inner h1 + br {
+        display: none !important;
+    }
+
+    /* Reduce spacing between navigation items */
+    #header nav {
+        margin-top: 0.5em !important;
+    }
+
+    #header nav ul {
+        margin: 0 !important;
+    }
+
+    #header nav ul li {
+        margin-bottom: 0.3em !important;
+    }
+
+    /* Make navigation links more compact */
+    #header nav ul li a {
+        padding: 0.2em 0 !important;
+        font-size: 0.9em !important;
+        line-height: 1.4 !important;
+    }
+
+    #header nav ul li a i {
+        margin-right: 8px !important;
+        width: 18px !important;
     }
 }
 </style>

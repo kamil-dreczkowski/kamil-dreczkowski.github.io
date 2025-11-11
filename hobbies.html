@@ -198,14 +198,14 @@ footer#footer .inner {
 
 /* UPDATED: Mobile view with text wrapping and justified text */
 @media screen and (max-width: 980px) {
-    /* Reduce image width on mobile but keep wrapping */
+    /* Increase image width on mobile but keep wrapping */
     #hobbies-content .image.left,
     #hobbies-content .hobby-article .image.left,
     #hobbies-content section .image.left,
     #main #hobbies-content .image.left {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
         margin: 0 1em 1em 0 !important;
     }
 
@@ -213,9 +213,9 @@ footer#footer .inner {
     #hobbies-content .hobby-article .image.right,
     #hobbies-content section .image.right,
     #main #hobbies-content .image.right {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
         margin: 0 0 1em 1em !important;
     }
 
@@ -227,15 +227,15 @@ footer#footer .inner {
 
     /* Additional specificity for span elements on mobile */
     #hobbies-content span.image.left {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
     }
 
     #hobbies-content span.image.right {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
     }
 }
 </style>
@@ -260,7 +260,7 @@ html body div#main section#hobbies-content section.hobby-article span.image.righ
     width: 55% !important;
 }
 
-/* Mobile override for 45% width */
+/* Mobile override for 60% width */
 @media screen and (max-width: 980px) {
     body #main #hobbies-content span.image.left,
     body #main #hobbies-content span.image.right,
@@ -268,9 +268,69 @@ html body div#main section#hobbies-content section.hobby-article span.image.righ
     html body div#main section#hobbies-content section.hobby-article span.image.right,
     #main span.image[class*="left"],
     #main span.image[class*="right"] {
-        width: 45% !important;
-        max-width: 45% !important;
-        min-width: 45% !important;
+        width: 60% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
+    }
+}
+</style>
+
+<style>
+/* 📱 MOBILE HEADER HEIGHT REDUCTION */
+@media screen and (max-width: 980px) {
+    /* Reduce overall header padding */
+    #header {
+        padding: 1em 1.5em !important;
+    }
+
+    #header .inner {
+        padding: 0 !important;
+    }
+
+    /* Make avatar image smaller */
+    #header .image.avatar {
+        margin-bottom: 0.5em !important;
+    }
+
+    #header .image.avatar img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    /* Reduce spacing around name */
+    #header .inner h1 {
+        margin: 0.3em 0 0.5em 0 !important;
+        font-size: 1.2em !important;
+    }
+
+    /* Remove the extra <br> spacing */
+    #header .inner h1 + br {
+        display: none !important;
+    }
+
+    /* Reduce spacing between navigation items */
+    #header nav {
+        margin-top: 0.5em !important;
+    }
+
+    #header nav ul {
+        margin: 0 !important;
+    }
+
+    #header nav ul li {
+        margin-bottom: 0.3em !important;
+    }
+
+    /* Make navigation links more compact */
+    #header nav ul li a {
+        padding: 0.2em 0 !important;
+        font-size: 0.9em !important;
+        line-height: 1.4 !important;
+    }
+
+    #header nav ul li a i {
+        margin-right: 8px !important;
+        width: 18px !important;
     }
 }
 </style>
@@ -327,7 +387,7 @@ html body div#main section#hobbies-content section.hobby-article span.image.righ
             <h3>Surfing</h3>
             <span class="image right"><img src="images/Surfing.png" alt="Image related to Hobby Four" /></span>
             <p>
-                Surfing has become my sanctuary—a perfect blend of challenge and tranquility that brings balance to my life. There's something magical about reading the ocean's rhythm, waiting for the perfect wave, and then harnessing its power for those fleeting moments of pure freedom. Each session leaves me with a profound sense of achievement and satisfaction, while the meditative aspects of being in the water wash away stress and bring a deep sense of relaxation. It's where I find my peace and reconnect with myself.
+                Surfing has become an essential part of my life, offering a unique balance of challenge and tranquility. There's something compelling about reading the ocean's rhythm, timing the approach, and catching a wave for those brief moments of complete immersion. Beyond the physical challenge, I find the experience remarkably centering—time spent in the water provides a natural break from daily pressures and offers a space for mental clarity. Each session delivers both a sense of accomplishment and genuine relaxation, making it one of the most rewarding ways I spend my time outside of work.
             </p>
         </section>
          <section class="hobby-article">
